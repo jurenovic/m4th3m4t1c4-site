@@ -9,14 +9,14 @@
   <meta name="theme-color" content="#7C5CFC" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
       --coral: #FF6B6B;
       --mint: #3DDC97;
       --purple: #7C5CFC;
       --ink: #1F1A33;
-      --muted: #5C5670;
+      --muted: #5a6e6a;
       --bg: #F7F4FF;
       --card: #FFFFFF;
       --shadow: 0 12px 40px rgba(124, 92, 252, 0.18);
@@ -44,6 +44,29 @@
       padding: 28px 24px 24px;
       text-align: center;
     }
+    .topbar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 8px;
+    }
+    label.lang-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    select#lang {
+      font: inherit;
+      font-weight: 700;
+      border: 2px solid rgba(124, 92, 252, 0.25);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: #fff;
+      color: var(--ink);
+      max-width: 200px;
+    }
     .badge {
       display: inline-block;
       font-size: 12px;
@@ -57,22 +80,16 @@
       margin-bottom: 14px;
     }
     h1 {
-      font-size: 1.65rem;
+      font-family: "Fredoka", "Nunito", sans-serif;
+      font-size: 1.7rem;
       line-height: 1.2;
       margin: 0 0 8px;
     }
     .lead {
-      margin: 0 0 8px;
+      margin: 0 0 18px;
       color: var(--muted);
       font-size: 1.02rem;
       line-height: 1.45;
-    }
-    .sl {
-      margin: 0 0 22px;
-      color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.4;
-      opacity: 0.92;
     }
     .actions { display: grid; gap: 12px; margin-top: 8px; }
     a.btn {
@@ -88,7 +105,6 @@
       transition: transform 0.12s ease, filter 0.12s ease;
     }
     a.btn:hover { transform: translateY(-1px); filter: brightness(1.03); }
-    a.btn:active { transform: translateY(0); }
     .btn-apple { background: var(--ink); color: #fff; }
     .btn-play { background: var(--mint); color: #0B3D2C; }
     .btn-home {
@@ -139,39 +155,38 @@
 </head>
 <body>
   <main>
-    <div class="badge">Lifetime Pro gift</div>
-    <h1>Unlock M4th3m4t1c4 Pro</h1>
-    <p class="lead">Free lifetime unlock — no ads, no tracking, one-time gift.</p>
-    <p class="sl">Brezplačna doživljenjska Pro koda — brez oglasov, brez sledenja.</p>
-
+    <div class="topbar">
+      <label class="lang-wrap"><span id="lang-label">Language</span>
+        <select id="lang" aria-label="Language"></select>
+      </label>
+    </div>
+    <div class="badge" id="badge"></div>
+    <h1 id="title"></h1>
+    <p class="lead" id="lead"></p>
     <div id="error" class="error" role="alert"></div>
-
     <div class="actions">
-      <a id="btn-apple" class="btn btn-apple" href="#" rel="noopener">Redeem on App Store</a>
-      <a id="btn-play" class="btn btn-play" href="#" rel="noopener">Redeem on Google Play</a>
-      <a class="btn btn-home" href="https://m4th3m4t1c4.com/">Get the app / Prenesi aplikacijo</a>
+      <a id="btn-apple" class="btn btn-apple" href="#" rel="noopener"></a>
+      <a id="btn-play" class="btn btn-play" href="#" rel="noopener"></a>
+      <a id="btn-home" class="btn btn-home" href="https://m4th3m4t1c4.com/"></a>
     </div>
-
     <div class="steps">
-      <strong>Quick steps</strong>
+      <strong id="steps-title"></strong>
       <ol>
-        <li>Tap Redeem for your phone (iPhone or Android).</li>
-        <li>Sign in with the Apple or Google account used on the device.</li>
-        <li>Open M4th3m4t1c4 — Pro should unlock (use Restore if needed).</li>
+        <li id="s1"></li>
+        <li id="s2"></li>
+        <li id="s3"></li>
       </ol>
-      <p style="margin:10px 0 0"><strong>Hitro:</strong> Tapni Redeem → prijavi se v trgovino → odpri aplikacijo.</p>
     </div>
-
     <p class="hint" id="meta"></p>
     <footer>
-      Made by <a href="https://m4th3m4t1c4.com/">Anli</a> · support@m4th3m4t1c4.com
+      M4th3m4t1c4 · <a href="https://m4th3m4t1c4.com/">m4th3m4t1c4.com</a> · support@m4th3m4t1c4.com
     </footer>
   </main>
-
   <script>
-    // Numeric App Store ID from App Store Connect (General → App Information).
-    // Update when known; leave empty to show App Store button as "configure" state.
     const APPLE_APP_ID = "";
+    const LANGUAGES = [{"code": "bg", "name": "Български", "flag": "🇧🇬"}, {"code": "ca", "name": "Català", "flag": "🇪🇸"}, {"code": "cs", "name": "Čeština", "flag": "🇨🇿"}, {"code": "da", "name": "Dansk", "flag": "🇩🇰"}, {"code": "de", "name": "Deutsch", "flag": "🇩🇪"}, {"code": "el", "name": "Ελληνικά", "flag": "🇬🇷"}, {"code": "en", "name": "English", "flag": "🇬🇧"}, {"code": "es", "name": "Español", "flag": "🇪🇸"}, {"code": "et", "name": "Eesti", "flag": "🇪🇪"}, {"code": "fi", "name": "Suomi", "flag": "🇫🇮"}, {"code": "fr", "name": "Français", "flag": "🇫🇷"}, {"code": "hr", "name": "Hrvatski", "flag": "🇭🇷"}, {"code": "hu", "name": "Magyar", "flag": "🇭🇺"}, {"code": "is", "name": "Íslenska", "flag": "🇮🇸"}, {"code": "it", "name": "Italiano", "flag": "🇮🇹"}, {"code": "lt", "name": "Lietuvių", "flag": "🇱🇹"}, {"code": "lv", "name": "Latviešu", "flag": "🇱🇻"}, {"code": "nb", "name": "Norsk", "flag": "🇳🇴"}, {"code": "nl", "name": "Nederlands", "flag": "🇳🇱"}, {"code": "pl", "name": "Polski", "flag": "🇵🇱"}, {"code": "pt", "name": "Português", "flag": "🇵🇹"}, {"code": "ro", "name": "Română", "flag": "🇷🇴"}, {"code": "sk", "name": "Slovenčina", "flag": "🇸🇰"}, {"code": "sl", "name": "Slovenščina", "flag": "🇸🇮"}, {"code": "sq", "name": "Shqip", "flag": "🇦🇱"}, {"code": "sr", "name": "Српски", "flag": "🇷🇸"}, {"code": "sv", "name": "Svenska", "flag": "🇸🇪"}, {"code": "tr", "name": "Türkçe", "flag": "🇹🇷"}, {"code": "uk", "name": "Українська", "flag": "🇺🇦"}];
+    const I18N = {"en": {"badge": "Lifetime Pro gift", "title": "Unlock M4th3m4t1c4 Pro", "lead": "Free lifetime unlock — no ads, no tracking, one-time gift.", "apple": "Redeem on App Store", "play": "Redeem on Google Play", "home": "Get the app", "missing": "Missing code. Open your unique QR gift link.", "apple_cfg": "App Store redeem isn’t configured yet (Apple App ID). Try Google Play on Android, or check back soon.", "steps": "Quick steps", "s1": "Tap Redeem for your phone (iPhone or Android).", "s2": "Sign in with the Apple or Google account on this device.", "s3": "Open M4th3m4t1c4 — Pro unlocks (use Restore purchases if needed).", "ready": "Campaign: {batch} · Code ready", "lang": "Language"}, "sl": {"badge": "Darilo: doživljenjski Pro", "title": "Odkleni M4th3m4t1c4 Pro", "lead": "Brezplačen doživljenjski odklep — brez oglasov, brez sledenja, enkratno darilo.", "apple": "Uveljavi v App Store", "play": "Uveljavi v Google Play", "home": "Prenesi aplikacijo", "missing": "Manjka koda. Odpri svojo unikatno QR povezavo z darilom.", "apple_cfg": "App Store uveljavitev še ni nastavljena (Apple App ID). Na Androidu uporabi Google Play ali poskusi pozneje.", "steps": "Hitri koraki", "s1": "Tapni Uveljavi za svoj telefon (iPhone ali Android).", "s2": "Prijavi se z Apple ali Google računom na tej napravi.", "s3": "Odpri M4th3m4t1c4 — Pro se odklene (po potrebi Obnovi nakupe).", "ready": "Kampanja: {batch} · Koda pripravljena", "lang": "Jezik"}, "de": {"badge": "Pro-Geschenk auf Lebenszeit", "title": "M4th3m4t1c4 Pro freischalten", "lead": "Kostenlose Freischaltung auf Lebenszeit — keine Werbung, kein Tracking, einmaliges Geschenk.", "apple": "Im App Store einlösen", "play": "Bei Google Play einlösen", "home": "App holen", "missing": "Code fehlt. Öffne deinen persönlichen QR-Geschenk-Link.", "apple_cfg": "App-Store-Einlösung noch nicht eingerichtet (Apple App ID). Auf Android Google Play nutzen oder später erneut versuchen.", "steps": "Kurz erklärt", "s1": "Tippe auf Einlösen für dein Telefon (iPhone oder Android).", "s2": "Melde dich mit dem Apple- oder Google-Konto auf diesem Gerät an.", "s3": "Öffne M4th3m4t1c4 — Pro wird freigeschaltet (ggf. Käufe wiederherstellen).", "ready": "Kampagne: {batch} · Code bereit", "lang": "Sprache"}, "hr": {"badge": "Dar: doživotni Pro", "title": "Otključaj M4th3m4t1c4 Pro", "lead": "Besplatno doživotno otključavanje — bez oglasa, bez praćenja, jednokratni dar.", "apple": "Iskoristi u App Storeu", "play": "Iskoristi u Google Playu", "home": "Preuzmi aplikaciju", "missing": "Nedostaje kod. Otvori svoj jedinstveni QR link s darom.", "apple_cfg": "App Store iskorištavanje još nije postavljeno (Apple App ID). Na Androidu koristi Google Play ili pokušaj kasnije.", "steps": "Brzi koraci", "s1": "Dodirni Iskoristi za svoj telefon (iPhone ili Android).", "s2": "Prijavi se Apple ili Google računom na ovom uređaju.", "s3": "Otvori M4th3m4t1c4 — Pro se otključava (po potrebi Vrati kupnje).", "ready": "Kampanja: {batch} · Kod spreman", "lang": "Jezik"}, "fr": {"badge": "Cadeau Pro à vie", "title": "Débloquer M4th3m4t1c4 Pro", "lead": "Déblocage à vie gratuit — sans pubs, sans tracking, cadeau unique.", "apple": "Utiliser sur l’App Store", "play": "Utiliser sur Google Play", "home": "Obtenir l’app", "missing": "Code manquant. Ouvre ton lien QR cadeau unique.", "apple_cfg": "L’échange App Store n’est pas encore configuré (Apple App ID). Sur Android, utilise Google Play ou réessaie plus tard.", "steps": "Étapes rapides", "s1": "Appuie sur Utiliser pour ton téléphone (iPhone ou Android).", "s2": "Connecte-toi avec le compte Apple ou Google de cet appareil.", "s3": "Ouvre M4th3m4t1c4 — Pro se débloque (Restaurer les achats si besoin).", "ready": "Campagne : {batch} · Code prêt", "lang": "Langue"}, "es": {"badge": "Regalo Pro de por vida", "title": "Desbloquear M4th3m4t1c4 Pro", "lead": "Desbloqueo de por vida gratis — sin anuncios, sin rastreo, regalo único.", "apple": "Canjear en App Store", "play": "Canjear en Google Play", "home": "Obtener la app", "missing": "Falta el código. Abre tu enlace QR de regalo único.", "apple_cfg": "El canje de App Store aún no está configurado (Apple App ID). En Android usa Google Play o vuelve más tarde.", "steps": "Pasos rápidos", "s1": "Toca Canjear para tu teléfono (iPhone o Android).", "s2": "Inicia sesión con la cuenta de Apple o Google de este dispositivo.", "s3": "Abre M4th3m4t1c4 — Pro se desbloquea (Restaurar compras si hace falta).", "ready": "Campaña: {batch} · Código listo", "lang": "Idioma"}, "it": {"badge": "Regalo Pro a vita", "title": "Sblocca M4th3m4t1c4 Pro", "lead": "Sblocco a vita gratuito — niente ads, niente tracking, regalo una tantum.", "apple": "Riscatta su App Store", "play": "Riscatta su Google Play", "home": "Scarica l’app", "missing": "Codice mancante. Apri il tuo link QR regalo unico.", "apple_cfg": "Il riscatto App Store non è ancora configurato (Apple App ID). Su Android usa Google Play o riprova più tardi.", "steps": "Passaggi rapidi", "s1": "Tocca Riscatta per il tuo telefono (iPhone o Android).", "s2": "Accedi con l’account Apple o Google di questo dispositivo.", "s3": "Apri M4th3m4t1c4 — Pro si sblocca (Ripristina acquisti se serve).", "ready": "Campagna: {batch} · Codice pronto", "lang": "Lingua"}, "pt": {"badge": "Presente Pro vitalício", "title": "Desbloquear M4th3m4t1c4 Pro", "lead": "Desbloqueio vitalício grátis — sem anúncios, sem tracking, presente único.", "apple": "Resgatar na App Store", "play": "Resgatar no Google Play", "home": "Obter a app", "missing": "Código em falta. Abre o teu link QR de presente único.", "apple_cfg": "O resgate da App Store ainda não está configurado (Apple App ID). No Android usa o Google Play ou tenta mais tarde.", "steps": "Passos rápidos", "s1": "Toca em Resgatar no teu telemóvel (iPhone ou Android).", "s2": "Inicia sessão com a conta Apple ou Google neste dispositivo.", "s3": "Abre o M4th3m4t1c4 — o Pro desbloqueia (Restaurar compras se precisares).", "ready": "Campanha: {batch} · Código pronto", "lang": "Idioma"}, "nl": {"badge": "Pro-cadeau voor het leven", "title": "M4th3m4t1c4 Pro ontgrendelen", "lead": "Gratis ontgrendeling voor het leven — geen ads, geen tracking, eenmalig cadeau.", "apple": "Inwisselen in App Store", "play": "Inwisselen in Google Play", "home": "App downloaden", "missing": "Code ontbreekt. Open je unieke QR-cadeaulink.", "apple_cfg": "App Store-inwisseling is nog niet ingesteld (Apple App ID). Op Android Google Play gebruiken of later opnieuw proberen.", "steps": "Snel stappen", "s1": "Tik op Inwisselen voor je telefoon (iPhone of Android).", "s2": "Log in met het Apple- of Google-account op dit apparaat.", "s3": "Open M4th3m4t1c4 — Pro wordt ontgrendeld (Aankopen herstellen indien nodig).", "ready": "Campagne: {batch} · Code klaar", "lang": "Taal"}, "pl": {"badge": "Prezent Pro na zawsze", "title": "Odblokuj M4th3m4t1c4 Pro", "lead": "Darmowe odblokowanie na zawsze — bez reklam, bez śledzenia, jednorazowy prezent.", "apple": "Zrealizuj w App Store", "play": "Zrealizuj w Google Play", "home": "Pobierz aplikację", "missing": "Brak kodu. Otwórz swój unikalny link QR z prezentem.", "apple_cfg": "Realizacja w App Store nie jest jeszcze skonfigurowana (Apple App ID). Na Androidzie użyj Google Play lub spróbuj później.", "steps": "Szybkie kroki", "s1": "Dotknij Zrealizuj na telefonie (iPhone lub Android).", "s2": "Zaloguj się kontem Apple lub Google na tym urządzeniu.", "s3": "Otwórz M4th3m4t1c4 — Pro się odblokuje (w razie potrzeby Przywróć zakupy).", "ready": "Kampania: {batch} · Kod gotowy", "lang": "Język"}, "cs": {"badge": "Dárek Pro navždy", "title": "Odemknout M4th3m4t1c4 Pro", "lead": "Bezplatné doživotní odemčení — bez reklam, bez sledování, jednorázový dárek.", "apple": "Uplatnit v App Store", "play": "Uplatnit v Google Play", "home": "Stáhnout aplikaci", "missing": "Chybí kód. Otevři svůj unikátní QR odkaz s dárkem.", "apple_cfg": "Uplatnění v App Store ještě není nastavené (Apple App ID). Na Androidu použij Google Play nebo zkus později.", "steps": "Rychlé kroky", "s1": "Klepni na Uplatnit pro svůj telefon (iPhone nebo Android).", "s2": "Přihlas se Apple nebo Google účtem na tomto zařízení.", "s3": "Otevři M4th3m4t1c4 — Pro se odemkne (případně Obnovit nákupy).", "ready": "Kampaň: {batch} · Kód připraven", "lang": "Jazyk"}, "sk": {"badge": "Darček Pro navždy", "title": "Odomknúť M4th3m4t1c4 Pro", "lead": "Bezplatné doživotné odomknutie — bez reklám, bez sledovania, jednorazový darček.", "apple": "Uplatniť v App Store", "play": "Uplatniť v Google Play", "home": "Stiahnuť aplikáciu", "missing": "Chýba kód. Otvor svoj unikátny QR odkaz s darčekom.", "apple_cfg": "Uplatnenie v App Store ešte nie je nastavené (Apple App ID). Na Androide použi Google Play alebo skús neskôr.", "steps": "Rýchle kroky", "s1": "Klepni na Uplatniť pre svoj telefón (iPhone alebo Android).", "s2": "Prihlás sa Apple alebo Google účtom na tomto zariadení.", "s3": "Otvor M4th3m4t1c4 — Pro sa odomkne (prípadne Obnoviť nákupy).", "ready": "Kampaň: {batch} · Kód pripravený", "lang": "Jazyk"}, "hu": {"badge": "Élethosszig tartó Pro ajándék", "title": "M4th3m4t1c4 Pro feloldása", "lead": "Ingyenes élethosszig tartó feloldás — nincs hirdetés, nincs követés, egyszeri ajándék.", "apple": "Beváltás az App Store-ban", "play": "Beváltás a Google Playen", "home": "App letöltése", "missing": "Hiányzó kód. Nyisd meg az egyedi QR ajándék linkedet.", "apple_cfg": "Az App Store beváltás még nincs beállítva (Apple App ID). Androidon használd a Google Playt, vagy próbáld később.", "steps": "Gyors lépések", "s1": "Koppints a Beváltás gombra a telefonodon (iPhone vagy Android).", "s2": "Jelentkezz be az eszköz Apple vagy Google fiókjával.", "s3": "Nyisd meg a M4th3m4t1c4-ot — a Pro feloldódik (szükség esetén Vásárlások visszaállítása).", "ready": "Kampány: {batch} · Kód kész", "lang": "Nyelv"}, "ro": {"badge": "Cadou Pro pe viață", "title": "Deblochează M4th3m4t1c4 Pro", "lead": "Deblocare pe viață gratuită — fără reclame, fără urmărire, cadou unic.", "apple": "Valorifică în App Store", "play": "Valorifică în Google Play", "home": "Descarcă aplicația", "missing": "Lipsește codul. Deschide linkul QR unic cu cadoul.", "apple_cfg": "Valorificarea App Store nu este încă configurată (Apple App ID). Pe Android folosește Google Play sau încearcă mai târziu.", "steps": "Pași rapizi", "s1": "Atinge Valorifică pe telefon (iPhone sau Android).", "s2": "Autentifică-te cu contul Apple sau Google de pe acest dispozitiv.", "s3": "Deschide M4th3m4t1c4 — Pro se deblochează (Restabilește achizițiile dacă e nevoie).", "ready": "Campanie: {batch} · Cod gata", "lang": "Limbă"}, "bg": {"badge": "Подарък Pro за цял живот", "title": "Отключи M4th3m4t1c4 Pro", "lead": "Безплатно отключване за цял живот — без реклами, без проследяване, еднократен подарък.", "apple": "Активирай в App Store", "play": "Активирай в Google Play", "home": "Изтегли приложението", "missing": "Липсва код. Отвори своя уникален QR линк с подаръка.", "apple_cfg": "Активирането в App Store още не е настроено (Apple App ID). На Android ползвай Google Play или опитай по-късно.", "steps": "Бързи стъпки", "s1": "Докосни Активирай за телефона си (iPhone или Android).", "s2": "Влез с Apple или Google акаунта на това устройство.", "s3": "Отвори M4th3m4t1c4 — Pro се отключва (Възстанови покупки при нужда).", "ready": "Кампания: {batch} · Кодът е готов", "lang": "Език"}, "el": {"badge": "Δώρο Pro εφ’ όρου ζωής", "title": "Ξεκλείδωμα M4th3m4t1c4 Pro", "lead": "Δωρεάν ξεκλείδωμα εφ’ όρου ζωής — χωρίς διαφημίσεις, χωρίς παρακολούθηση, εφάπαξ δώρο.", "apple": "Εξαργύρωση στο App Store", "play": "Εξαργύρωση στο Google Play", "home": "Λήψη εφαρμογής", "missing": "Λείπει κωδικός. Άνοιξε τον μοναδικό QR σύνδεσμο δώρου.", "apple_cfg": "Η εξαργύρωση App Store δεν έχει ρυθμιστεί ακόμα (Apple App ID). Σε Android χρησιμοποίησε Google Play ή δοκίμασε αργότερα.", "steps": "Γρήγορα βήματα", "s1": "Πάτα Εξαργύρωση για το τηλέφωνό σου (iPhone ή Android).", "s2": "Σύνδεση με τον λογαριασμό Apple ή Google αυτής της συσκευής.", "s3": "Άνοιξε το M4th3m4t1c4 — το Pro ξεκλειδώνει (Επαναφορά αγορών αν χρειαστεί).", "ready": "Καμπάνια: {batch} · Έτοιμος κωδικός", "lang": "Γλώσσα"}, "tr": {"badge": "Ömür boyu Pro hediyesi", "title": "M4th3m4t1c4 Pro’yu aç", "lead": "Ücretsiz ömür boyu açma — reklam yok, izleme yok, tek seferlik hediye.", "apple": "App Store’da kullan", "play": "Google Play’de kullan", "home": "Uygulamayı indir", "missing": "Kod yok. Benzersiz QR hediye bağlantını aç.", "apple_cfg": "App Store kullanımı henüz ayarlanmadı (Apple App ID). Android’de Google Play’i kullan veya sonra tekrar dene.", "steps": "Hızlı adımlar", "s1": "Telefonun için Kullan’a dokun (iPhone veya Android).", "s2": "Bu cihazdaki Apple veya Google hesabıyla oturum aç.", "s3": "M4th3m4t1c4’ü aç — Pro açılır (gerekirse Satın alımları geri yükle).", "ready": "Kampanya: {batch} · Kod hazır", "lang": "Dil"}, "sv": {"badge": "Pro-present för livet", "title": "Lås upp M4th3m4t1c4 Pro", "lead": "Gratis upplåsning för livet — inga annonser, ingen spårning, engångspresent.", "apple": "Lös in i App Store", "play": "Lös in i Google Play", "home": "Hämta appen", "missing": "Kod saknas. Öppna din unika QR-presentlänk.", "apple_cfg": "App Store-inlösen är inte konfigurerad ännu (Apple App ID). På Android använd Google Play eller försök senare.", "steps": "Snabba steg", "s1": "Tryck på Lös in för din telefon (iPhone eller Android).", "s2": "Logga in med Apple- eller Google-kontot på den här enheten.", "s3": "Öppna M4th3m4t1c4 — Pro låses upp (Återställ köp vid behov).", "ready": "Kampanj: {batch} · Kod klar", "lang": "Språk"}, "da": {"badge": "Pro-gave for livet", "title": "Lås M4th3m4t1c4 Pro op", "lead": "Gratis oplåsning for livet — ingen annoncer, ingen sporing, engangsgave.", "apple": "Indløs i App Store", "play": "Indløs i Google Play", "home": "Hent appen", "missing": "Kode mangler. Åbn dit unikke QR-gavelink.", "apple_cfg": "App Store-indløsning er ikke konfigureret endnu (Apple App ID). På Android brug Google Play eller prøv senere.", "steps": "Hurtige trin", "s1": "Tryk på Indløs til din telefon (iPhone eller Android).", "s2": "Log ind med Apple- eller Google-kontoen på denne enhed.", "s3": "Åbn M4th3m4t1c4 — Pro låses op (Gendan køb hvis nødvendigt).", "ready": "Kampagne: {batch} · Kode klar", "lang": "Sprog"}, "nb": {"badge": "Pro-gave for livet", "title": "Lås opp M4th3m4t1c4 Pro", "lead": "Gratis opplåsing for livet — ingen annonser, ingen sporing, engangsgave.", "apple": "Løs inn i App Store", "play": "Løs inn i Google Play", "home": "Hent appen", "missing": "Kode mangler. Åpne din unike QR-gavelenke.", "apple_cfg": "App Store-innløsning er ikke satt opp ennå (Apple App ID). På Android bruk Google Play eller prøv senere.", "steps": "Raske steg", "s1": "Trykk Løs inn for telefonen din (iPhone eller Android).", "s2": "Logg inn med Apple- eller Google-kontoen på denne enheten.", "s3": "Åpne M4th3m4t1c4 — Pro låses opp (Gjenopprett kjøp ved behov).", "ready": "Kampanje: {batch} · Kode klar", "lang": "Språk"}, "fi": {"badge": "Pro-lahja koko elämäksi", "title": "Avaa M4th3m4t1c4 Pro", "lead": "Ilmainen elinikäinen avaus — ei mainoksia, ei seurantaa, kertalahja.", "apple": "Lunasta App Storessa", "play": "Lunasta Google Playssa", "home": "Lataa sovellus", "missing": "Koodi puuttuu. Avaa uniikki QR-lahjalinkkisi.", "apple_cfg": "App Store -lunastusta ei ole vielä määritetty (Apple App ID). Androidilla käytä Google Playta tai yritä myöhemmin.", "steps": "Pikavaiheet", "s1": "Napauta Lunasta puhelimellesi (iPhone tai Android).", "s2": "Kirjaudu tämän laitteen Apple- tai Google-tilillä.", "s3": "Avaa M4th3m4t1c4 — Pro avautuu (Palauta ostokset tarvittaessa).", "ready": "Kampanja: {batch} · Koodi valmis", "lang": "Kieli"}, "et": {"badge": "Eluaegne Pro kingitus", "title": "Ava M4th3m4t1c4 Pro", "lead": "Tasuta eluaegne avamine — ilma reklaamideta, ilma jälgimiseta, ühekordne kingitus.", "apple": "Lunasta App Store’is", "play": "Lunasta Google Plays", "home": "Hangi rakendus", "missing": "Kood puudub. Ava oma unikaalne QR-kingituslink.", "apple_cfg": "App Store’i lunastamine pole veel seadistatud (Apple App ID). Androidis kasuta Google Playd või proovi hiljem.", "steps": "Kiired sammud", "s1": "Puuduta Lunasta oma telefoni jaoks (iPhone või Android).", "s2": "Logi sisse selle seadme Apple’i või Google’i kontoga.", "s3": "Ava M4th3m4t1c4 — Pro avaneb (vajadusel Taasta ostud).", "ready": "Kampaania: {batch} · Kood valmis", "lang": "Keel"}, "lv": {"badge": "Mūža Pro dāvana", "title": "Atbloķēt M4th3m4t1c4 Pro", "lead": "Bezmaksas mūža atbloķēšana — bez reklāmām, bez izsekošanas, vienreizēja dāvana.", "apple": "Izmantot App Store", "play": "Izmantot Google Play", "home": "Iegūt lietotni", "missing": "Trūkst koda. Atver savu unikālo QR dāvanas saiti.", "apple_cfg": "App Store izmantošana vēl nav iestatīta (Apple App ID). Androidā izmanto Google Play vai mēģini vēlāk.", "steps": "Ātri soļi", "s1": "Pieskaries Izmantot savam telefonam (iPhone vai Android).", "s2": "Pieraksties ar Apple vai Google kontu šajā ierīcē.", "s3": "Atver M4th3m4t1c4 — Pro atbloķējas (vajadzības gadījumā Atjaunot pirkumus).", "ready": "Kampaņa: {batch} · Kods gatavs", "lang": "Valoda"}, "lt": {"badge": "Viso gyvenimo Pro dovana", "title": "Atrakinti M4th3m4t1c4 Pro", "lead": "Nemokamas viso gyvenimo atrakinimas — be reklamų, be sekimo, vienkartinė dovana.", "apple": "Išpirkti App Store", "play": "Išpirkti Google Play", "home": "Gauti programėlę", "missing": "Trūksta kodo. Atidaryk unikalų QR dovanos nuorodą.", "apple_cfg": "App Store išpirkimas dar nesukonfigūruotas (Apple App ID). Androide naudok Google Play arba bandyk vėliau.", "steps": "Greiti žingsniai", "s1": "Paliesk Išpirkti savo telefonui (iPhone arba Android).", "s2": "Prisijunk šio įrenginio Apple arba Google paskyra.", "s3": "Atidaryk M4th3m4t1c4 — Pro atrakins (prireikus Atkurti pirkimus).", "ready": "Kampanija: {batch} · Kodas paruoštas", "lang": "Kalba"}, "uk": {"badge": "Подарунок Pro назавжди", "title": "Розблокувати M4th3m4t1c4 Pro", "lead": "Безкоштовне довічне розблокування — без реклами, без відстеження, разовий подарунок.", "apple": "Активувати в App Store", "play": "Активувати в Google Play", "home": "Отримати застосунок", "missing": "Немає коду. Відкрий унікальне QR-посилання з подарунком.", "apple_cfg": "Активацію App Store ще не налаштовано (Apple App ID). На Android скористайся Google Play або спробуй пізніше.", "steps": "Швидкі кроки", "s1": "Торкнись Активувати для свого телефону (iPhone або Android).", "s2": "Увійди за допомогою облікового запису Apple або Google на цьому пристрої.", "s3": "Відкрий M4th3m4t1c4 — Pro розблокується (за потреби Відновити покупки).", "ready": "Кампанія: {batch} · Код готовий", "lang": "Мова"}, "sr": {"badge": "Поклон Pro за цео живот", "title": "Откључај M4th3m4t1c4 Pro", "lead": "Бесплатно доживотно откључавање — без огласа, без праћења, једнократни поклон.", "apple": "Искористи у App Store", "play": "Искористи у Google Play", "home": "Преузми апликацију", "missing": "Недостаје код. Отвори свој јединствени QR линк са поклоном.", "apple_cfg": "Искоришћавање у App Store још није подешено (Apple App ID). На Androidu користи Google Play или пробај касније.", "steps": "Брзи кораци", "s1": "Додирни Искористи за свој телефон (iPhone или Android).", "s2": "Пријави се Apple или Google налогом на овом уређају.", "s3": "Отвори M4th3m4t1c4 — Pro се откључава (по потреби Врати куповине).", "ready": "Кампања: {batch} · Код спреман", "lang": "Језик"}, "sq": {"badge": "Dhuratë Pro për jetë", "title": "Zhblloko M4th3m4t1c4 Pro", "lead": "Zhbllokim falas për jetë — pa reklama, pa gjurmim, dhuratë njëherëshe.", "apple": "Shpërblye në App Store", "play": "Shpërblye në Google Play", "home": "Merr aplikacionin", "missing": "Mungon kodi. Hap lidhjen unike QR të dhuratës.", "apple_cfg": "Shpërblyerja e App Store nuk është konfiguruar ende (Apple App ID). Në Android përdor Google Play ose provo më vonë.", "steps": "Hapat e shpejtë", "s1": "Trokit Shpërblye për telefonin tënd (iPhone ose Android).", "s2": "Hyr me llogarinë Apple ose Google në këtë pajisje.", "s3": "Hap M4th3m4t1c4 — Pro zhbllokohet (Rivendos blerjet nëse duhet).", "ready": "Fushata: {batch} · Kodi gati", "lang": "Gjuha"}, "ca": {"badge": "Regal Pro de per vida", "title": "Desbloqueja M4th3m4t1c4 Pro", "lead": "Desbloqueig de per vida gratuït — sense anuncis, sense seguiment, regal únic.", "apple": "Canvia a l’App Store", "play": "Canvia a Google Play", "home": "Obtén l’app", "missing": "Falta el codi. Obre l’enllaç QR únic del regal.", "apple_cfg": "El canvi d’App Store encara no està configurat (Apple App ID). A Android fes servir Google Play o torna-ho a provar més tard.", "steps": "Passos ràpids", "s1": "Toca Canvia per al teu telèfon (iPhone o Android).", "s2": "Inicia sessió amb el compte d’Apple o Google d’aquest dispositiu.", "s3": "Obre M4th3m4t1c4 — Pro es desbloqueja (Restaura compres si cal).", "ready": "Campanya: {batch} · Codi a punt", "lang": "Idioma"}, "is": {"badge": "Pro-gjöf ævilangt", "title": "Opna M4th3m4t1c4 Pro", "lead": "Ókeypis ævilöng opnun — engar auglýsingar, engin rakning, eingjafargjöf.", "apple": "Innleysa í App Store", "play": "Innleysa í Google Play", "home": "Sækja appið", "missing": "Kóði vantar. Opnaðu einstaka QR-gjafatengilinn þinn.", "apple_cfg": "App Store innlausn er ekki stillt enn (Apple App ID). Á Android notaðu Google Play eða reyndu seinna.", "steps": "Fljótleg skref", "s1": "Ýttu á Innleysa fyrir símann þinn (iPhone eða Android).", "s2": "Skráðu þig inn með Apple- eða Google-reikningi þessa tækis.", "s3": "Opnaðu M4th3m4t1c4 — Pro opnast (Endurheimta kaup ef þarf).", "ready": "Herferð: {batch} · Kóði tilbúinn", "lang": "Tungumál"}};
+    const SUPPORTED = new Set(LANGUAGES.map((l) => l.code));
 
     const params = new URLSearchParams(location.search);
     const code = (params.get("c") || params.get("code") || "").trim();
@@ -179,28 +194,73 @@
     const pathCode = location.pathname.replace(/\/+$/, "").split("/").pop();
     const redeemCode = code || (/^[A-Z0-9][A-Z0-9-]{3,}$/i.test(pathCode) && pathCode !== "pilot" ? pathCode : "");
 
+    function pickLang() {
+      const fromQuery = (params.get("lang") || "").toLowerCase();
+      if (SUPPORTED.has(fromQuery)) return fromQuery;
+      const saved = localStorage.getItem("m4th_redeem_lang");
+      if (saved && SUPPORTED.has(saved)) return saved;
+      const nav = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+      const base = String(nav).toLowerCase().split("-")[0];
+      return SUPPORTED.has(base) ? base : "en";
+    }
+
+    let lang = pickLang();
+    const sel = document.getElementById("lang");
+    LANGUAGES.forEach((l) => {
+      const o = document.createElement("option");
+      o.value = l.code;
+      o.textContent = l.flag + " " + l.name;
+      sel.appendChild(o);
+    });
+    sel.value = lang;
+    sel.addEventListener("change", () => {
+      lang = sel.value;
+      localStorage.setItem("m4th_redeem_lang", lang);
+      apply();
+    });
+
     const err = document.getElementById("error");
     const btnApple = document.getElementById("btn-apple");
     const btnPlay = document.getElementById("btn-play");
+    const btnHome = document.getElementById("btn-home");
     const meta = document.getElementById("meta");
 
+    function t() { return I18N[lang] || I18N.en; }
     function showError(msg) {
       err.textContent = msg;
-      err.classList.add("visible");
+      err.classList.toggle("visible", !!msg);
     }
 
-    const ua = navigator.userAgent || "";
-    const isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-    const isAndroid = /Android/i.test(ua);
+    function apply() {
+      const s = t();
+      document.documentElement.lang = lang;
+      document.getElementById("lang-label").textContent = s.lang;
+      document.getElementById("badge").textContent = s.badge;
+      document.getElementById("title").textContent = s.title;
+      document.getElementById("lead").textContent = s.lead;
+      btnApple.textContent = s.apple;
+      btnPlay.textContent = s.play;
+      btnHome.textContent = s.home;
+      document.getElementById("steps-title").textContent = s.steps;
+      document.getElementById("s1").textContent = s.s1;
+      document.getElementById("s2").textContent = s.s2;
+      document.getElementById("s3").textContent = s.s3;
+      document.title = s.title + " — M4th3m4t1c4";
 
-    if (!redeemCode) {
-      showError("Missing code / Manjka koda. Ask for a unique QR link with your gift code.");
-      btnApple.classList.add("hidden");
-      btnPlay.classList.add("hidden");
-    } else {
+      btnApple.classList.remove("hidden");
+      btnPlay.classList.remove("hidden");
+      showError("");
+
+      if (!redeemCode) {
+        showError(s.missing);
+        btnApple.classList.add("hidden");
+        btnPlay.classList.add("hidden");
+        meta.textContent = "";
+        return;
+      }
+
       const playUrl = "https://play.google.com/redeem?code=" + encodeURIComponent(redeemCode);
       btnPlay.href = playUrl;
-
       if (APPLE_APP_ID) {
         btnApple.href =
           "https://apps.apple.com/redeem?ctx=offercodes&id=" +
@@ -209,28 +269,30 @@
           encodeURIComponent(redeemCode);
       } else {
         btnApple.href = "#";
-        btnApple.addEventListener("click", function (e) {
-          e.preventDefault();
-          showError("App Store redeem link not configured yet (need Apple App ID). Use Google Play if you're on Android, or try again later.");
-        });
       }
+      meta.textContent = s.ready.replace("{batch}", batch);
+    }
 
+    btnApple.addEventListener("click", (e) => {
+      if (!APPLE_APP_ID) {
+        e.preventDefault();
+        showError(t().apple_cfg);
+      }
+    });
+
+    apply();
+
+    const ua = navigator.userAgent || "";
+    const isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    const isAndroid = /Android/i.test(ua);
+    if (redeemCode) {
       if (isIOS) {
         btnPlay.classList.add("hidden");
-        if (APPLE_APP_ID) {
-          // Soft auto-redirect on iOS after a beat so the copy is visible if they back out.
-          setTimeout(function () {
-            location.href = btnApple.href;
-          }, 600);
-        }
+        if (APPLE_APP_ID) setTimeout(() => { location.href = btnApple.href; }, 700);
       } else if (isAndroid) {
         btnApple.classList.add("hidden");
-        setTimeout(function () {
-          location.href = playUrl;
-        }, 600);
+        setTimeout(() => { location.href = btnPlay.href; }, 700);
       }
-
-      meta.textContent = "Campaign: " + batch + " · Code ready";
     }
   </script>
 </body>
