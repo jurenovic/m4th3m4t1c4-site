@@ -1,0 +1,59 @@
+{
+  "meta": {"title": "M4th3m4t1c4 — Aventures maths pour jeunes héros", "description": "Maths ludiques pour 6–12 ans. Suis le chemin, résous des énigmes, gagne des étoiles et badges — en maîtrisant addition, soustraction, multiplication et division."},
+  "nav": {"features": "Fonctionnalités", "how": "Comment ça marche", "screenshots": "Captures", "download": "Télécharger"},
+  "hero": {
+    "eyebrow": "Maths ludiques pour 6 – 12 ans",
+    "titleBefore": "Des maths qui font",
+    "titleAccent": "jouer.",
+    "lead": "Suis un chemin sinueux, résous des énigmes, gagne des étoiles et des badges — tout en maîtrisant addition, soustraction, multiplication et division.",
+    "downloadOn": "Télécharger dans",
+    "appStore": "l'App Store",
+    "getItOn": "Disponible sur",
+    "googlePlay": "Google Play",
+    "loved": "· Adoré des enfants et des parents",
+    "stats": [
+      {"value": "20+", "label": "Niveaux du parcours"},
+      {"value": "4", "label": "Opérations"},
+      {"value": "5★", "label": "Note App Store"},
+      {"value": "Gratuit", "label": "Pour commencer"}
+    ]
+  },
+  "features": {
+    "kicker": "Tout ce dont les enfants ont besoin",
+    "title": "Conçu pour les jeunes apprentis",
+    "sub": "Chaque choix de design a été pensé pour les enfants d'école primaire — de la taille des caractères à l'espacement des boutons.",
+    "items": [
+      {"emoji": "🗺️", "title": "Parcours", "desc": "Progresse à travers plus de 20 niveaux sur une carte sinueuse. Chaque niveau débloque le suivant et motive les enfants."},
+      {"emoji": "➕", "title": "Les 4 opérations", "desc": "Addition, soustraction, multiplication et division — chacune avec son thème d'aventure et une difficulté progressive."},
+      {"emoji": "⭐", "title": "Étoiles et badges", "desc": "Gagne jusqu'à 3 étoiles par niveau et collectionne des badges. Le progrès visible fait revenir les enfants chaque jour."},
+      {"emoji": "🔥", "title": "Séries quotidiennes", "desc": "Crée une habitude avec des séries qui récompensent la régularité. 5 minutes par jour battent 35 minutes une fois par semaine."},
+      {"emoji": "🌙", "title": "Mode sombre", "desc": "Un thème sombre AMOLED complet, doux pour les yeux à l'heure du coucher. Magnifique à toute heure."},
+      {"emoji": "✨", "title": "Retour immédiat", "desc": "Chaque réponse reçoit un retour visuel et sonore immédiat. Les bonnes réponses célèbrent ; les erreurs expliquent en douceur — sans honte, juste apprendre."}
+    ]
+  },
+  "how": {
+    "kicker": "Comment ça marche",
+    "title": "Trois étapes du téléchargement au héros des maths.",
+    "sub": "",
+    "steps": [
+      {"n": "01", "icon": "🎯", "title": "Choisis une opération", "desc": "Choisis parmi Arène d'addition, Safari de soustraction, Montagne de multiplication ou Course de division."},
+      {"n": "02", "icon": "🧮", "title": "Résous les questions", "desc": "Tape ta réponse sur le grand pavé numérique. Chaque bonne réponse remplit la jauge d'étoiles."},
+      {"n": "03", "icon": "🏆", "title": "Monte de niveau et collectionne", "desc": "Gagne jusqu'à 3 étoiles par niveau, débloque des badges et vois ton parcours grandir."}
+    ]
+  },
+  "screenshots": {
+    "kicker": "Vois-le en action",
+    "title": "Net, coloré, conçu pour garder les enfants concentrés sur l'apprentissage.",
+    "sub": "",
+    "caps": ["Choisis ton opération", "Suis ton parcours", "Résous et gagne des étoiles", "Célèbre chaque victoire"]
+  },
+  "cta": {
+    "title": "Commence ton aventure maths",
+    "sub": "Téléchargement gratuit. Les 2 premiers niveaux sont offerts. Passe à la version complète quand tu veux pour un accès illimité.",
+    "scanApple": "Scanner pour l'App Store",
+    "scanPlay": "Scanner pour Google Play",
+    "note": "Pointe l'appareil photo sur le QR code pour télécharger instantanément. Aucun compte requis."
+  },
+  "footer": {"privacy": "Politique de confidentialité", "terms": "Conditions d'utilisation", "support": "Support", "copy": "© 2026 M4th3m4t1c4. Âges 6 – 12."},
+  "legal": {"back": "Retour", "copyLink": "Copier le lien vers cette section", "copied": "✓ copié", "questions": "Des questions ?"}
+}
