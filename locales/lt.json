@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "title": "M4th3m4t1c4 — Matematikos nuotykiai jauniems herojams",
+    "description": "Žaidybinė matematika 6–12 metų vaikams. Sek kelionės keliu, spręsk galvosūkius, rink žvaigždutes ir ženklelius — ir įvaldyk sudėtį, atimtį, daugybą bei dalybą."
+  },
+  "nav": {
+    "features": "Funkcijos",
+    "how": "Kaip veikia",
+    "screenshots": "Ekrano nuotraukos",
+    "download": "Atsisiųsti"
+  },
+  "hero": {
+    "eyebrow": "Žaidybinė matematika 6 – 12 metų vaikams",
+    "titleBefore": "Matematika, kuri atrodo",
+    "titleAccent": "kaip žaidimas.",
+    "lead": "Sek vingiuotu keliu, spręsk galvosūkius, rink žvaigždutes ir ženklelius — ir įvaldyk sudėtį, atimtį, daugybą bei dalybą.",
+    "downloadOn": "Atsisiųsk iš",
+    "appStore": "App Store",
+    "getItOn": "Gauk iš",
+    "googlePlay": "Google Play",
+    "loved": "· Mėgstama vaikų ir tėvų",
+    "stats": [
+      {
+        "value": "20+",
+        "label": "Kelionės lygiai"
+      },
+      {
+        "value": "4",
+        "label": "Matematinės operacijos"
+      },
+      {
+        "value": "5★",
+        "label": "App Store įvertinimas"
+      },
+      {
+        "value": "Nemokama",
+        "label": "Pradžiai"
+      }
+    ]
+  },
+  "features": {
+    "kicker": "Viskas, ko reikia vaikams",
+    "title": "Sukurta jauniems mokiniams",
+    "sub": "Kiekvienas dizaino sprendimas priimtas galvojant apie pradinių klasių vaikus — nuo šrifto dydžio iki mygtukų tarpų.",
+    "items": [
+      {
+        "emoji": "🗺️",
+        "title": "Kelionės kelias",
+        "desc": "Eik per 20+ kruopščiai sukurtų lygių vingiuotame žemėlapyje. Kiekvienas lygis atrakina kitą ir skatina vaikus eiti pirmyn."
+      },
+      {
+        "emoji": "➕",
+        "title": "Visos 4 operacijos",
+        "desc": "Sudėtis, atimtis, daugyba ir dalyba — kiekviena su savo nuotykių tema ir didėjančiu sunkumu."
+      },
+      {
+        "emoji": "⭐",
+        "title": "Žvaigždutės ir ženkleliai",
+        "desc": "Uždirbk iki 3 žvaigždučių už lygį ir rink pasiekimų ženklelius. Matoma pažanga grąžina vaikus kasdien."
+      },
+      {
+        "emoji": "🔥",
+        "title": "Kasdienės serijos",
+        "desc": "Suformuok pratybų įprotį su serijomis, kurios apdovanoja nuoseklumą. 5 minutės kasdien geriau nei 35 minutės kartą per savaitę."
+      },
+      {
+        "emoji": "🌙",
+        "title": "Tamsusis režimas",
+        "desc": "Pilnai sukurta AMOLED tamsi tema, švelni akims vakarinėse pratybose. Puikiai atrodo bet kuriuo paros metu."
+      },
+      {
+        "emoji": "✨",
+        "title": "Momentinis grįžtamasis ryšys",
+        "desc": "Kiekvienas atsakymas gauna momentinį vaizdinį ir garsinį grįžtamąjį ryšį. Teisingi švenčia; neteisingi švelniai paaiškina — be gėdos, tik mokymasis."
+      }
+    ]
+  },
+  "how": {
+    "kicker": "Kaip veikia",
+    "title": "Trys žingsniai nuo atsisiuntimo iki matematikos herojaus.",
+    "sub": "",
+    "steps": [
+      {
+        "n": "01",
+        "icon": "🎯",
+        "title": "Pasirink operaciją",
+        "desc": "Rinkis iš Sudėties arenos, Atimties safario, Daugybos kalno ar Dalybos sprinto."
+      },
+      {
+        "n": "02",
+        "icon": "🧮",
+        "title": "Spręsk klausimus",
+        "desc": "Bakstelėk didžiąją skaitmenų klaviatūrą, kad įvestum atsakymą. Kiekvienas teisingas atsakymas pildo žvaigždučių juostą."
+      },
+      {
+        "n": "03",
+        "icon": "🏆",
+        "title": "Kylk lygiu ir rink",
+        "desc": "Uždirbk iki 3 žvaigždučių už lygį, atrakink ženklelius ir stebėk, kaip auga tavo kelias."
+      }
+    ]
+  },
+  "screenshots": {
+    "kicker": "Pamatyk veiksmą",
+    "title": "Švaru, spalvinga ir sukurta taip, kad vaikai liktų susitelkę į mokymąsi.",
+    "sub": "",
+    "caps": [
+      "Pasirink operaciją",
+      "Sek savo keliu",
+      "Spręsk ir rink žvaigždutes",
+      "Švęsk kiekvieną pergalę"
+    ]
+  },
+  "cta": {
+    "title": "Pradėk matematikos nuotykį",
+    "sub": "Atsisiųsti nemokama. Pirmi 2 lygiai mūsų sąskaita. Atnaujink bet kada neribotai prieigai prie visų lygių.",
+    "scanApple": "Nuskaityk App Store",
+    "scanPlay": "Nuskaityk Google Play",
+    "note": "Nukreipk telefono kamerą į QR kodą ir atsisiųsk iškart. Paskyra nereikalinga."
+  },
+  "footer": {
+    "privacy": "Privatumo politika",
+    "terms": "Naudojimo sąlygos",
+    "support": "Pagalba",
+    "copy": "© 2026 M4th3m4t1c4. Amžius 6 – 12."
+  },
+  "legal": {
+    "back": "Atgal",
+    "copyLink": "Kopijuoti nuorodą į šį skyrių",
+    "copied": "✓ nukopijuota",
+    "questions": "Klausimų?"
+  }
+}
