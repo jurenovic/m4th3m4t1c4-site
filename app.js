@@ -262,7 +262,7 @@
     try {
       var qr = qrcode(0, 'M'); qr.addData(text); qr.make();
       // cell size 8, quiet-zone margin 1 — CSS stretches the img to fill .qr-box
-      el.innerHTML = qr.createImgTag(8, 1);
+      el.innerHTML = qr.createImgTag(8, 2);
       var img = el.querySelector('img');
       if (img) {
         img.alt = text;
