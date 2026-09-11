@@ -189,7 +189,7 @@ section { padding: 72px 0; }
   background: #fff; border-radius: 20px; padding: 14px; text-align: center;
   border: 1.5px solid rgba(0,0,0,0.05); box-shadow: 0 10px 28px rgba(0,0,0,0.06);
 }
-.shot img { border-radius: 14px; margin: 0 auto 12px; }
+.shot img { border-radius: 14px; margin: 0 auto 12px; width: 100%; height: auto; display: block; }
 .shot figcaption { font-weight: 800; font-size: 0.92rem; }
 
 .cta {
@@ -316,8 +316,34 @@ section { padding: 72px 0; }
     align-items: stretch; box-shadow: var(--shadow);
   }
   .nav-links.open { display: flex; }
-  .hero-grid, .features, .steps, .shots-grid { grid-template-columns: 1fr; }
+  .hero-grid, .features, .steps { grid-template-columns: 1fr; }
   .phone.p2 { display: none; }
   .phone.p1 { position: relative; left: auto; transform: none; margin: 0 auto; }
   .phone-stack { min-height: 0; }
+
+  /* Screenshots: horizontal snap-scroll on phones only */
+  .shots-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 14px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 20px;
+    padding: 4px 20px 12px;
+    margin-inline: -20px;
+    width: calc(100% + 40px);
+    max-width: none;
+    grid-template-columns: none;
+  }
+  .shots-grid::-webkit-scrollbar { height: 6px; }
+  .shots-grid::-webkit-scrollbar-thumb {
+    background: rgba(240, 80, 58, 0.35); border-radius: 999px;
+  }
+  .shot {
+    flex: 0 0 min(72vw, 260px);
+    scroll-snap-align: start;
+    max-width: min(72vw, 260px);
+  }
 }
