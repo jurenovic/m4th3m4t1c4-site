@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "M4th3m4t1c4 — Matematične pustolovščine za mlade junake",
+    "description": "Igrificirana matematika za otroke od 6 do 12 let. Sledi poti, rešuj uganke, zbiraš zvezdice in značke — ter obvladaš seštevanje, odštevanje, množenje in deljenje."
+  },
+  "nav": {
+    "features": "Funkcije",
+    "how": "Kako deluje",
+    "screenshots": "Posnetki zaslona",
+    "download": "Prenesi"
+  },
+  "hero": {
+    "eyebrow": "Igrificirana matematika za starost 6 – 12",
+    "titleBefore": "Matematika, ki se zdi",
+    "titleAccent": "kot igra.",
+    "lead": "Sledi vijugasti poti, rešuj uganke, zbiraš zvezdice in značke — in hkrati obvladaš seštevanje, odštevanje, množenje in deljenje.",
+    "downloadOn": "Prenesi v",
+    "appStore": "App Store",
+    "getItOn": "Na voljo v",
+    "googlePlay": "Google Play",
+    "loved": "· Priljubljeno med otroki in starši",
+    "stats": [
+      { "value": "20+", "label": "Ravni poti" },
+      { "value": "4", "label": "Matematične operacije" },
+      { "value": "5★", "label": "Ocena App Store" },
+      { "value": "Brezplačno", "label": "Za začetek" }
+    ]
+  },
+  "features": {
+    "kicker": "Vse, kar otroci potrebujejo",
+    "title": "Narejeno za mlade učence",
+    "sub": "Vsaka oblikovalska odločitev je nastala z mislijo na osnovnošolske otroke — od velikosti pisave do razmika gumbov.",
+    "items": [
+      {
+        "emoji": "🗺️",
+        "title": "Potovanje",
+        "desc": "Napreduj skozi 20+ skrbno pripravljenih ravni na vijugastem zemljevidu. Vsaka raven odklene naslednjo in otroke spodbuja naprej."
+      },
+      {
+        "emoji": "➕",
+        "title": "Vse 4 operacije",
+        "desc": "Seštevanje, odštevanje, množenje in deljenje — vsaka z lastno pustolovsko temo in naraščajočo težavnostjo."
+      },
+      {
+        "emoji": "⭐",
+        "title": "Zvezdice in značke",
+        "desc": "Pridobi do 3 zvezdice na raven in zbiraš dosežke. Vidni napredek otroke vrača vsak dan."
+      },
+      {
+        "emoji": "🔥",
+        "title": "Dnevne serije",
+        "desc": "Zgradi navado vadbe s serijami, ki nagrajujejo vztrajnost. 5 minut vsak dan premaga 35 minut enkrat na teden."
+      },
+      {
+        "emoji": "🌙",
+        "title": "Temni način",
+        "desc": "Popolnoma oblikovana AMOLED temna tema, prijazna očem pri večerni vadbi. Odlično izgleda ves dan."
+      },
+      {
+        "emoji": "✨",
+        "title": "Takojšnja povratna informacija",
+        "desc": "Vsak odgovor dobi takojšnjo vizualno in zvočno povratno informacijo. Pravilni odgovori slavijo; napačni nežno razložijo — brez sramu, samo učenje."
+      }
+    ]
+  },
+  "how": {
+    "kicker": "Kako deluje",
+    "title": "Trije koraki od prenosa do matematičnega junaka.",
+    "sub": "",
+    "steps": [
+      {
+        "n": "01",
+        "icon": "🎯",
+        "title": "Izberi operacijo",
+        "desc": "Izberi med Areni seštevanja, Safarijem odštevanja, Goro množenja ali Dirko deljenja."
+      },
+      {
+        "n": "02",
+        "icon": "🧮",
+        "title": "Rešuj vprašanja",
+        "desc": "S tipkovnico vnesi odgovor. Vsak pravilen odgovor napolni merilnik zvezdic."
+      },
+      {
+        "n": "03",
+        "icon": "🏆",
+        "title": "Napreduj in zbiraš",
+        "desc": "Pridobi do 3 zvezdice na raven, odkleni značke in opazuj, kako raste tvoja pot."
+      }
+    ]
+  },
+  "screenshots": {
+    "kicker": "Poglej v akciji",
+    "title": "Čisto, barvito in zasnovano tako, da otroci ostanejo osredotočeni na učenje.",
+    "sub": "",
+    "caps": [
+      "Izberi operacijo",
+      "Sledi svoji poti",
+      "Rešuj in zbiraš zvezdice",
+      "Proslavi vsako zmago"
+    ]
+  },
+  "cta": {
+    "title": "Začni svojo matematično pustolovščino",
+    "sub": "Prenos je brezplačen. Prvi 2 ravni sta na nas. Kadarkoli nadgradiš za neomejen dostop do vseh ravni.",
+    "scanApple": "Skeniraj za App Store",
+    "scanPlay": "Skeniraj za Google Play",
+    "note": "Usmeri kamero telefona na QR kodo za takojšen prenos. Račun ni potreben."
+  },
+  "footer": {
+    "privacy": "Politika zasebnosti",
+    "terms": "Pogoji uporabe",
+    "support": "Podpora",
+    "copy": "© 2026 M4th3m4t1c4. Starost 6 – 12."
+  },
+  "legal": {
+    "back": "Nazaj",
+    "copyLink": "Kopiraj povezavo do tega razdelka",
+    "copied": "✓ kopirano",
+    "questions": "Vprašanja?"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "title": "M4th3m4t1c4 — Matemātikas piedzīvojumi jaunajiem varoņiem",
+    "description": "Spēlveidota matemātika vecumam 6–12. Seko ceļam, risini mīklas, pelni zvaigznes un nozīmītes — un apgūsti saskaitīšanu, atņemšanu, reizināšanu un dalīšanu."
+  },
+  "nav": {
+    "features": "Iespējas",
+    "how": "Kā tas darbojas",
+    "screenshots": "Ekrānuzņēmumi",
+    "download": "Lejupielādēt"
+  },
+  "hero": {
+    "eyebrow": "Spēlveidota matemātika vecumam 6 – 12",
+    "titleBefore": "Matemātika, kas šķiet",
+    "titleAccent": "kā spēle.",
+    "lead": "Seko līkumotam ceļam, risini mīklas, pelni zvaigznes un nozīmītes — un apgūsti saskaitīšanu, atņemšanu, reizināšanu un dalīšanu.",
+    "downloadOn": "Lejupielādē",
+    "appStore": "App Store",
+    "getItOn": "Iegūsti",
+    "googlePlay": "Google Play",
+    "loved": "· Iecienīts bērnu un vecāku vidū",
+    "stats": [
+      {
+        "value": "20+",
+        "label": "Ceļa līmeņi"
+      },
+      {
+        "value": "4",
+        "label": "Matemātiskās darbības"
+      },
+      {
+        "value": "5★",
+        "label": "App Store vērtējums"
+      },
+      {
+        "value": "Bezmaksas",
+        "label": "Lai sāktu"
+      }
+    ]
+  },
+  "features": {
+    "kicker": "Viss, kas bērniem vajadzīgs",
+    "title": "Radīts jaunajiem skolēniem",
+    "sub": "Katrs dizaina lēmums pieņemts, domājot par sākumskolas bērniem — no fonta izmēra līdz pogu atstarpēm.",
+    "items": [
+      {
+        "emoji": "🗺️",
+        "title": "Ceļojuma ceļš",
+        "desc": "Izej cauri 20+ rūpīgi veidotiem līmeņiem uz līkumotas kartes. Katrs līmenis atslēdz nākamo un motivē bērnus iet uz priekšu."
+      },
+      {
+        "emoji": "➕",
+        "title": "Visas 4 darbības",
+        "desc": "Saskaitīšana, atņemšana, reizināšana un dalīšana — katrai sava piedzīvojumu tēma un pieaugoša grūtība."
+      },
+      {
+        "emoji": "⭐",
+        "title": "Zvaigznes un nozīmītes",
+        "desc": "Nopelni līdz 3 zvaigznēm katrā līmenī un vāc sasniegumu nozīmītes. Redzams progress atgriež bērnus katru dienu."
+      },
+      {
+        "emoji": "🔥",
+        "title": "Ikdienas sērijas",
+        "desc": "Veido vingrināšanās ieradumu ar sērijām, kas atalgo konsekvenci. 5 minūtes katru dienu pārspēj 35 minūtes reizi nedēļā."
+      },
+      {
+        "emoji": "🌙",
+        "title": "Tumšais režīms",
+        "desc": "Pilnībā izstrādāta AMOLED tumšā tēma, kas saudzē acis vakara vingrinājumos. Lieliski izskatās jebkurā diennakts laikā."
+      },
+      {
+        "emoji": "✨",
+        "title": "Tūlītēja atgriezeniskā saite",
+        "desc": "Katra atbilde saņem tūlītēju vizuālu un skaņas atgriezenisko saiti. Pareizās svin; nepareizās maigi izskaidro — bez kauna, tikai mācīšanās."
+      }
+    ]
+  },
+  "how": {
+    "kicker": "Kā tas darbojas",
+    "title": "Trīs soļi no lejupielādes līdz matemātikas varonim.",
+    "sub": "",
+    "steps": [
+      {
+        "n": "01",
+        "icon": "🎯",
+        "title": "Izvēlies darbību",
+        "desc": "Izvēlies no Saskaitīšanas arēnas, Atņemšanas safari, Reizināšanas kalna vai Dalīšanas skrējiena."
+      },
+      {
+        "n": "02",
+        "icon": "🧮",
+        "title": "Risini jautājumus",
+        "desc": "Pieskaries lielajai ciparu tastatūrai, lai ievadītu atbildi. Katra pareizā atbilde piepilda zvaigžņu mērītāju."
+      },
+      {
+        "n": "03",
+        "icon": "🏆",
+        "title": "Celies līmenī un vāc",
+        "desc": "Nopelni līdz 3 zvaigznēm katrā līmenī, atslēdz nozīmītes un skaties, kā aug tavs ceļš."
+      }
+    ]
+  },
+  "screenshots": {
+    "kicker": "Skaties darbībā",
+    "title": "Tīrs, krāsains un veidots tā, lai bērni paliktu koncentrēti uz mācīšanos.",
+    "sub": "",
+    "caps": [
+      "Izvēlies darbību",
+      "Seko savam ceļam",
+      "Risini un pelni zvaigznes",
+      "Svinī katru uzvaru"
+    ]
+  },
+  "cta": {
+    "title": "Sāc savu matemātikas piedzīvojumu",
+    "sub": "Lejupielāde ir bezmaksas. Pirmie 2 līmeņi no mums. Jauninī jebkurā laikā neierobežotai piekļuvei visiem līmeņiem.",
+    "scanApple": "Skenē App Store",
+    "scanPlay": "Skenē Google Play",
+    "note": "Vērs telefona kameru pret QR kodu, lai lejupielādētu uzreiz. Konts nav nepieciešams."
+  },
+  "footer": {
+    "privacy": "Privātuma politika",
+    "terms": "Lietošanas noteikumi",
+    "support": "Atbalsts",
+    "copy": "© 2026 M4th3m4t1c4. Vecums 6 – 12."
+  },
+  "legal": {
+    "back": "Atpakaļ",
+    "copyLink": "Kopēt saiti uz šo sadaļu",
+    "copied": "✓ nokopēts",
+    "questions": "Jautājumi?"
+  }
+}

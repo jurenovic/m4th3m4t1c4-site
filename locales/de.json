@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "M4th3m4t1c4 — Mathe-Abenteuer für junge Helden",
+    "description": "Gamifizierte Mathematik für Kinder von 6–12. Folge dem Weg, löse Rätsel, verdiene Sterne und Abzeichen — und meistere Addition, Subtraktion, Multiplikation und Division."
+  },
+  "nav": {
+    "features": "Funktionen",
+    "how": "So funktioniert's",
+    "screenshots": "Screenshots",
+    "download": "Download"
+  },
+  "hero": {
+    "eyebrow": "Gamifizierte Mathematik für Alter 6 – 12",
+    "titleBefore": "Mathe, die sich anfühlt",
+    "titleAccent": "wie Spielen.",
+    "lead": "Folge einem gewundenen Weg, löse Rätsel, verdiene Sterne und Abzeichen — und meistere dabei Addition, Subtraktion, Multiplikation und Division.",
+    "downloadOn": "Laden im",
+    "appStore": "App Store",
+    "getItOn": "Jetzt bei",
+    "googlePlay": "Google Play",
+    "loved": "· Beliebt bei Kindern & Eltern",
+    "stats": [
+      { "value": "20+", "label": "Weg-Level" },
+      { "value": "4", "label": "Rechenarten" },
+      { "value": "5★", "label": "App-Store-Bewertung" },
+      { "value": "Kostenlos", "label": "Zum Start" }
+    ]
+  },
+  "features": {
+    "kicker": "Alles, was Kinder brauchen",
+    "title": "Für junge Lernende gebaut",
+    "sub": "Jede Designentscheidung wurde mit Grundschulkindern im Blick getroffen — von der Schriftgröße bis zum Abstand der Buttons.",
+    "items": [
+      {
+        "emoji": "🗺️",
+        "title": "Abenteuerweg",
+        "desc": "Schreite durch über 20 handgefertigte Level auf einer gewundenen Karte. Jedes Level schaltet das nächste frei und motiviert Kinder weiterzumachen."
+      },
+      {
+        "emoji": "➕",
+        "title": "Alle 4 Rechenarten",
+        "desc": "Addition, Subtraktion, Multiplikation und Division — jede mit eigenem Abenteuer-Thema und steigendem Schwierigkeitsgrad."
+      },
+      {
+        "emoji": "⭐",
+        "title": "Sterne & Abzeichen",
+        "desc": "Verdiene bis zu 3 Sterne pro Level und sammle Erfolgsabzeichen. Sichtbarer Fortschritt holt Kinder jeden Tag zurück."
+      },
+      {
+        "emoji": "🔥",
+        "title": "Tägliche Serien",
+        "desc": "Baue eine Übungsgewohnheit mit Serien, die Beständigkeit belohnen. 5 Minuten täglich schlagen 35 Minuten einmal die Woche."
+      },
+      {
+        "emoji": "🌙",
+        "title": "Dunkelmodus",
+        "desc": "Ein voll gestaltetes AMOLED-Dunkellayout, das bei abendlichem Üben die Augen schont. Sieht zu jeder Tageszeit großartig aus."
+      },
+      {
+        "emoji": "✨",
+        "title": "Sofortiges Feedback",
+        "desc": "Jede Antwort erhält sofortiges visuelles und akustisches Feedback. Richtige Antworten feiern; falsche erklären sanft — ohne Scham, nur Lernen."
+      }
+    ]
+  },
+  "how": {
+    "kicker": "So funktioniert's",
+    "title": "Drei Schritte vom Download zum Mathe-Helden.",
+    "sub": "",
+    "steps": [
+      {
+        "n": "01",
+        "icon": "🎯",
+        "title": "Rechenart wählen",
+        "desc": "Wähle zwischen Additions-Arena, Subtraktions-Safari, Multiplikations-Berg oder Divisions-Dash."
+      },
+      {
+        "n": "02",
+        "icon": "🧮",
+        "title": "Aufgaben lösen",
+        "desc": "Tippe die Antwort auf dem großen Ziffernfeld. Jede richtige Antwort füllt die Sternenleiste."
+      },
+      {
+        "n": "03",
+        "icon": "🏆",
+        "title": "Aufsteigen & sammeln",
+        "desc": "Verdiene bis zu 3 Sterne pro Level, schalte Abzeichen frei und sieh deinen Weg wachsen."
+      }
+    ]
+  },
+  "screenshots": {
+    "kicker": "Sieh es in Aktion",
+    "title": "Klar, bunt und so gestaltet, dass Kinder beim Lernen fokussiert bleiben.",
+    "sub": "",
+    "caps": [
+      "Rechenart wählen",
+      "Folge deinem Weg",
+      "Lösen & Sterne verdienen",
+      "Jeden Sieg feiern"
+    ]
+  },
+  "cta": {
+    "title": "Starte dein Mathe-Abenteuer",
+    "sub": "Kostenlos zum Download. Die ersten 2 Level gehen auf uns. Upgrade jederzeit für unbegrenzten Zugang zu allen Leveln.",
+    "scanApple": "Für den App Store scannen",
+    "scanPlay": "Für Google Play scannen",
+    "note": "Richte die Handykamera auf den QR-Code für den Sofort-Download. Kein Konto nötig."
+  },
+  "footer": {
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
+    "support": "Support",
+    "copy": "© 2026 M4th3m4t1c4. Alter 6 – 12."
+  },
+  "legal": {
+    "back": "Zurück",
+    "copyLink": "Link zu diesem Abschnitt kopieren",
+    "copied": "✓ kopiert",
+    "questions": "Fragen?"
+  }
+}

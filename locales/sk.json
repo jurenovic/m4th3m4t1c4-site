@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "title": "M4th3m4t1c4 — Matematické dobrodružstvá pre mladých hrdinov",
+    "description": "Hravo poňatá matematika pre vek 6–12. Sleduj cestu, rieš hádanky, zbieraj hviezdičky a odznaky — a ovládni sčítanie, odčítanie, násobenie a delenie."
+  },
+  "nav": {
+    "features": "Funkcie",
+    "how": "Ako to funguje",
+    "screenshots": "Snímky obrazovky",
+    "download": "Stiahnuť"
+  },
+  "hero": {
+    "eyebrow": "Hravo poňatá matematika pre vek 6 – 12",
+    "titleBefore": "Matematika, ktorá pôsobí",
+    "titleAccent": "ako hra.",
+    "lead": "Sleduj kľukatú cestu, rieš hádanky, zbieraj hviezdičky a odznaky — a zároveň ovládni sčítanie, odčítanie, násobenie a delenie.",
+    "downloadOn": "Stiahnuť v",
+    "appStore": "App Store",
+    "getItOn": "Získať na",
+    "googlePlay": "Google Play",
+    "loved": "· Obľúbené u detí a rodičov",
+    "stats": [
+      {
+        "value": "20+",
+        "label": "Úrovne cesty"
+      },
+      {
+        "value": "4",
+        "label": "Matematické operácie"
+      },
+      {
+        "value": "5★",
+        "label": "Hodnotenie App Store"
+      },
+      {
+        "value": "Zadarmo",
+        "label": "Na začiatok"
+      }
+    ]
+  },
+  "features": {
+    "kicker": "Všetko, čo deti potrebujú",
+    "title": "Vytvorené pre mladých žiakov",
+    "sub": "Každé dizajnové rozhodnutie vzniklo s ohľadom na deti na základnej škole — od veľkosti písma po rozostupy tlačidiel.",
+    "items": [
+      {
+        "emoji": "🗺️",
+        "title": "Cesta dobrodružstva",
+        "desc": "Prejdi cez 20+ starostlivo vytvorených úrovní na kľukatej mape. Každá úroveň odomkne ďalšiu a motivuje deti ísť ďalej."
+      },
+      {
+        "emoji": "➕",
+        "title": "Všetky 4 operácie",
+        "desc": "Sčítanie, odčítanie, násobenie a delenie — každá s vlastnou dobrodružnou témou a rastúcou obtiažnosťou."
+      },
+      {
+        "emoji": "⭐",
+        "title": "Hviezdičky a odznaky",
+        "desc": "Získaj až 3 hviezdičky za úroveň a zbieraj odznaky úspechov. Viditeľný pokrok prináša deti späť každý deň."
+      },
+      {
+        "emoji": "🔥",
+        "title": "Denné série",
+        "desc": "Vybuduj návyk cvičenia so sériami, ktoré odmeňujú dôslednosť. 5 minút denne porazí 35 minút raz týždenne."
+      },
+      {
+        "emoji": "🌙",
+        "title": "Tmavý režim",
+        "desc": "Plne navrhnutá AMOLED tmavá téma, ktorá šetrí oči pri večernom cvičení. Vyzerá skvele v každú dennú dobu."
+      },
+      {
+        "emoji": "✨",
+        "title": "Okamžitá spätná väzba",
+        "desc": "Každá odpoveď dostane okamžitú vizuálnu a zvukovú spätnú väzbu. Správne odpovede oslavujú; nesprávne jemne vysvetlia — bez hanby, len učenie."
+      }
+    ]
+  },
+  "how": {
+    "kicker": "Ako to funguje",
+    "title": "Tri kroky od stiahnutia k matematickému hrdinovi.",
+    "sub": "",
+    "steps": [
+      {
+        "n": "01",
+        "icon": "🎯",
+        "title": "Vyber operáciu",
+        "desc": "Vyber si medzi Arénou sčítania, Safari odčítania, Horou násobenia alebo Šprintom delenia."
+      },
+      {
+        "n": "02",
+        "icon": "🧮",
+        "title": "Rieš otázky",
+        "desc": "Ťukni na veľkú numerickú klávesnicu a zadaj odpoveď. Každá správna odpoveď naplní merač hviezdičiek."
+      },
+      {
+        "n": "03",
+        "icon": "🏆",
+        "title": "Postupuj a zbieraj",
+        "desc": "Získaj až 3 hviezdičky za úroveň, odomkni odznaky a sleduj, ako rastie tvoja cesta."
+      }
+    ]
+  },
+  "screenshots": {
+    "kicker": "Pozri to v akcii",
+    "title": "Čisté, farebné a navrhnuté tak, aby deti zostali sústredené na učenie.",
+    "sub": "",
+    "caps": [
+      "Vyber operáciu",
+      "Sleduj svoju cestu",
+      "Rieš a zbieraj hviezdičky",
+      "Osláv každé víťazstvo"
+    ]
+  },
+  "cta": {
+    "title": "Začni svoje matematické dobrodružstvo",
+    "sub": "Stiahnutie je zadarmo. Prvé 2 úrovne sú na nás. Kedykoľvek upgraduj pre neobmedzený prístup ku všetkým úrovniam.",
+    "scanApple": "Naskenuj pre App Store",
+    "scanPlay": "Naskenuj pre Google Play",
+    "note": "Namier kameru telefónu na QR kód pre okamžité stiahnutie. Účet nie je potrebný."
+  },
+  "footer": {
+    "privacy": "Zásady ochrany súkromia",
+    "terms": "Podmienky používania",
+    "support": "Podpora",
+    "copy": "© 2026 M4th3m4t1c4. Vek 6 – 12."
+  },
+  "legal": {
+    "back": "Späť",
+    "copyLink": "Kopírovať odkaz na túto sekciu",
+    "copied": "✓ skopírované",
+    "questions": "Otázky?"
+  }
+}

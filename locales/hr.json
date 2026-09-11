@@ -1,0 +1,59 @@
+{
+  "meta": {"title": "M4th3m4t1c4 — Matematičke avanture za mlade junake", "description": "Igrificirana matematika za dob 6–12. Prati put, rješavaj zagonetke, osvajaj zvjezdice i bedževe — uz zbrajanje, oduzimanje, množenje i dijeljenje."},
+  "nav": {"features": "Značajke", "how": "Kako radi", "screenshots": "Snimke zaslona", "download": "Preuzmi"},
+  "hero": {
+    "eyebrow": "Igrificirana matematika za dob 6 – 12",
+    "titleBefore": "Matematika koja se čini",
+    "titleAccent": "kao igra.",
+    "lead": "Prati vijugavi put, rješavaj zagonetke, osvajaj zvjezdice i bedževe — uz zbrajanje, oduzimanje, množenje i dijeljenje.",
+    "downloadOn": "Preuzmi u",
+    "appStore": "App Storeu",
+    "getItOn": "Dostupno na",
+    "googlePlay": "Google Playu",
+    "loved": "· Voljena među djecom i roditeljima",
+    "stats": [
+      {"value": "20+", "label": "Razine puta"},
+      {"value": "4", "label": "Matematičke operacije"},
+      {"value": "5★", "label": "Ocjena App Store"},
+      {"value": "Besplatno", "label": "Za početak"}
+    ]
+  },
+  "features": {
+    "kicker": "Sve što djeca trebaju",
+    "title": "Napravljeno za mlade učenike",
+    "sub": "Svaka dizajnerska odluka donesena je s osnovnoškolskom djecom na umu — od veličine fonta do razmaka tipki.",
+    "items": [
+      {"emoji": "🗺️", "title": "Putovanje", "desc": "Napreduj kroz 20+ pažljivo izrađenih razina na vijugavoj karti. Svaka razina otključava sljedeću i motivira djecu."},
+      {"emoji": "➕", "title": "Sve 4 operacije", "desc": "Zbrajanje, oduzimanje, množenje i dijeljenje — svaka s vlastitom avanturističkom temom i rastućom težinom."},
+      {"emoji": "⭐", "title": "Zvjezdice i bedževi", "desc": "Osvoji do 3 zvjezdice po razini i skupljaj bedževe. Vidljiv napredak vraća djecu svaki dan."},
+      {"emoji": "🔥", "title": "Dnevni nizovi", "desc": "Izgradi naviku vježbanja s nizovima koji nagrađuju dosljednost. 5 minuta dnevno pobjeđuje 35 minuta jednom tjedno."},
+      {"emoji": "🌙", "title": "Tamni način", "desc": "Potpuno dizajnirana AMOLED tamna tema, ugodna očima tijekom večernje vježbe. Izgleda sjajno u svako doba dana."},
+      {"emoji": "✨", "title": "Trenutna povratna informacija", "desc": "Svaki odgovor dobiva trenutnu vizualnu i zvučnu povratnu informaciju. Točni odgovori slave; netočni nježno objašnjavaju — bez srama, samo učenje."}
+    ]
+  },
+  "how": {
+    "kicker": "Kako radi",
+    "title": "Tri koraka od preuzimanja do matematičkog junaka.",
+    "sub": "",
+    "steps": [
+      {"n": "01", "icon": "🎯", "title": "Odaberi operaciju", "desc": "Biraj između Arene zbrajanja, Safaria oduzimanja, Planine množenja ili utrke dijeljenja."},
+      {"n": "02", "icon": "🧮", "title": "Rješavaj pitanja", "desc": "Dodirni veliku tipkovnicu za unos odgovora. Svaki točan odgovor puni mjerač zvjezdica."},
+      {"n": "03", "icon": "🏆", "title": "Napreduj i skupljaj", "desc": "Osvoji do 3 zvjezdice po razini, otključaj bedževe i gledaj kako tvoj put raste."}
+    ]
+  },
+  "screenshots": {
+    "kicker": "Pogledaj u akciji",
+    "title": "Čisto, šareno i osmišljeno da djeca ostanu usredotočena na učenje.",
+    "sub": "",
+    "caps": ["Odaberi operaciju", "Prati svoj put", "Rješavaj i osvajaj zvjezdice", "Proslavi svaku pobjedu"]
+  },
+  "cta": {
+    "title": "Započni svoju matematičku avanturu",
+    "sub": "Preuzimanje je besplatno. Prve 2 razine su na nas. Nadogradi bilo kada za neograničen pristup svim razinama.",
+    "scanApple": "Skeniraj za App Store",
+    "scanPlay": "Skeniraj za Google Play",
+    "note": "Usmjeri kameru telefona na QR kod za trenutno preuzimanje. Račun nije potreban."
+  },
+  "footer": {"privacy": "Politika privatnosti", "terms": "Uvjeti korištenja", "support": "Podrška", "copy": "© 2026 M4th3m4t1c4. Dob 6 – 12."},
+  "legal": {"back": "Natrag", "copyLink": "Kopiraj poveznicu na ovaj odjeljak", "copied": "✓ kopirano", "questions": "Pitanja?"}
+}

@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "title": "M4th3m4t1c4 — Matteeventyr for unge helter",
+    "description": "Spillifisert matematikk for alder 6–12. Følg stien, løs gåter, tjen stjerner og merker — og mestrer addisjon, subtraksjon, multiplikasjon og divisjon."
+  },
+  "nav": {
+    "features": "Funksjoner",
+    "how": "Slik fungerer det",
+    "screenshots": "Skjermbilder",
+    "download": "Last ned"
+  },
+  "hero": {
+    "eyebrow": "Spillifisert matematikk for alder 6 – 12",
+    "titleBefore": "Matte som føles",
+    "titleAccent": "som lek.",
+    "lead": "Følg en svingete sti, løs gåter, tjen stjerner og merker — mens du mestrer addisjon, subtraksjon, multiplikasjon og divisjon.",
+    "downloadOn": "Last ned i",
+    "appStore": "App Store",
+    "getItOn": "Hent den på",
+    "googlePlay": "Google Play",
+    "loved": "· Elsket av barn og foreldre",
+    "stats": [
+      {
+        "value": "20+",
+        "label": "Stinivåer"
+      },
+      {
+        "value": "4",
+        "label": "Regnearter"
+      },
+      {
+        "value": "5★",
+        "label": "App Store-vurdering"
+      },
+      {
+        "value": "Gratis",
+        "label": "For å starte"
+      }
+    ]
+  },
+  "features": {
+    "kicker": "Alt barn trenger",
+    "title": "Bygget for unge elever",
+    "sub": "Hver designbeslutning er tatt med barneskolebarn i tankene — fra skriftstørrelse til knappavstand.",
+    "items": [
+      {
+        "emoji": "🗺️",
+        "title": "Reisesti",
+        "desc": "Gå gjennom 20+ håndlagde nivåer på et svingete kart. Hvert nivå låser opp det neste og motiverer barna videre."
+      },
+      {
+        "emoji": "➕",
+        "title": "Alle 4 regnearter",
+        "desc": "Addisjon, subtraksjon, multiplikasjon og divisjon — hver med sitt eventyrtema og økende vanskelighetsgrad."
+      },
+      {
+        "emoji": "⭐",
+        "title": "Stjerner og merker",
+        "desc": "Tjen opptil 3 stjerner per nivå og samle prestasjonsmerker. Synlig fremgang får barna tilbake hver dag."
+      },
+      {
+        "emoji": "🔥",
+        "title": "Daglige serier",
+        "desc": "Bygg en øvevane med serier som belønner konsistens. 5 minutter hver dag slår 35 minutter én gang i uken."
+      },
+      {
+        "emoji": "🌙",
+        "title": "Mørk modus",
+        "desc": "Fullt designet AMOLED-mørkt tema som er skånsomt for øynene under kveldsøving. Ser flott ut hele døgnet."
+      },
+      {
+        "emoji": "✨",
+        "title": "Umiddelbar tilbakemelding",
+        "desc": "Hvert svar får umiddelbar visuell og lydlig tilbakemelding. Riktige feirer; feil forklarer mildt — uten skam, bare læring."
+      }
+    ]
+  },
+  "how": {
+    "kicker": "Slik fungerer det",
+    "title": "Tre steg fra nedlasting til mattehelt.",
+    "sub": "",
+    "steps": [
+      {
+        "n": "01",
+        "icon": "🎯",
+        "title": "Velg en regneart",
+        "desc": "Velg mellom Addisjonsarena, Subtraksjonssafari, Multiplikasjonsfjell eller Divisjonsdash."
+      },
+      {
+        "n": "02",
+        "icon": "🧮",
+        "title": "Løs spørsmål",
+        "desc": "Trykk på det store talltastaturet for å skrive inn svaret. Hvert riktig svar fyller stjernemåleren."
+      },
+      {
+        "n": "03",
+        "icon": "🏆",
+        "title": "Gå opp i nivå og samle",
+        "desc": "Tjen opptil 3 stjerner per nivå, lås opp merker og se stien din vokse."
+      }
+    ]
+  },
+  "screenshots": {
+    "kicker": "Se det i aksjon",
+    "title": "Rent, fargerikt og designet for å holde barna fokusert på læring.",
+    "sub": "",
+    "caps": [
+      "Velg regneart",
+      "Følg stien din",
+      "Løs og tjen stjerner",
+      "Feir hver seier"
+    ]
+  },
+  "cta": {
+    "title": "Start matteeventyret ditt",
+    "sub": "Gratis å laste ned. De første 2 nivåene er på oss. Oppgrader når som helst for ubegrenset tilgang til alle nivåer.",
+    "scanApple": "Skann for App Store",
+    "scanPlay": "Skann for Google Play",
+    "note": "Pek telefonkameraet mot QR-koden for umiddelbar nedlasting. Ingen konto kreves."
+  },
+  "footer": {
+    "privacy": "Personvernerklæring",
+    "terms": "Bruksvilkår",
+    "support": "Support",
+    "copy": "© 2026 M4th3m4t1c4. Alder 6 – 12."
+  },
+  "legal": {
+    "back": "Tilbake",
+    "copyLink": "Kopier lenke til denne delen",
+    "copied": "✓ kopiert",
+    "questions": "Spørsmål?"
+  }
+}

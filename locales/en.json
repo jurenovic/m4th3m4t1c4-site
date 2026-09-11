@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "M4th3m4t1c4 — Math adventures for young heroes",
+    "description": "Gamified Math for Ages 6 – 12. Follow a winding journey path, solve puzzles, earn stars and badges — while mastering addition, subtraction, multiplication and division."
+  },
+  "nav": {
+    "features": "Features",
+    "how": "How it Works",
+    "screenshots": "Screenshots",
+    "download": "Download"
+  },
+  "hero": {
+    "eyebrow": "Gamified Math for Ages 6 – 12",
+    "titleBefore": "Math that feels",
+    "titleAccent": "like play.",
+    "lead": "Follow a winding journey path, solve puzzles, earn stars and badges — all while mastering addition, subtraction, multiplication and division.",
+    "downloadOn": "Download on the",
+    "appStore": "App Store",
+    "getItOn": "Get it on",
+    "googlePlay": "Google Play",
+    "loved": "· Loved by kids & parents",
+    "stats": [
+      { "value": "20+", "label": "Journey Levels" },
+      { "value": "4", "label": "Math Operations" },
+      { "value": "5★", "label": "App Store Rating" },
+      { "value": "Free", "label": "To Start" }
+    ]
+  },
+  "features": {
+    "kicker": "Everything kids need",
+    "title": "Built for young learners",
+    "sub": "Every design decision was made with elementary school children in mind — from type size to button spacing.",
+    "items": [
+      {
+        "emoji": "🗺️",
+        "title": "Journey Path",
+        "desc": "Progress through 20+ hand-crafted levels on a winding map. Each level unlocks the next, keeping kids motivated to push forward."
+      },
+      {
+        "emoji": "➕",
+        "title": "All 4 Operations",
+        "desc": "Addition, subtraction, multiplication and division — each with a dedicated adventure theme and progressive difficulty."
+      },
+      {
+        "emoji": "⭐",
+        "title": "Stars & Badges",
+        "desc": "Earn up to 3 stars per level and collect achievement badges. Visible progress keeps kids coming back every day."
+      },
+      {
+        "emoji": "🔥",
+        "title": "Daily Streaks",
+        "desc": "Build a practice habit with streaks that reward consistency. A 5-minute session every day beats a 35-minute session once a week."
+      },
+      {
+        "emoji": "🌙",
+        "title": "Dark Mode",
+        "desc": "A fully designed AMOLED dark theme that's easy on eyes during bedtime practice. Looks great at every time of day."
+      },
+      {
+        "emoji": "✨",
+        "title": "Instant Feedback",
+        "desc": "Every answer gets immediate visual and audio feedback. Correct answers celebrate; wrong ones gently explain — no shame, just learning."
+      }
+    ]
+  },
+  "how": {
+    "kicker": "How it works",
+    "title": "Three steps from download to math hero.",
+    "sub": "",
+    "steps": [
+      {
+        "n": "01",
+        "icon": "🎯",
+        "title": "Pick an operation",
+        "desc": "Choose from Addition Arena, Subtraction Safari, Multiplication Mountain, or Division Dash."
+      },
+      {
+        "n": "02",
+        "icon": "🧮",
+        "title": "Solve questions",
+        "desc": "Tap the big numpad to enter your answer. Every correct answer fills your star meter."
+      },
+      {
+        "n": "03",
+        "icon": "🏆",
+        "title": "Level up & collect",
+        "desc": "Earn up to 3 stars per level, unlock badges, and watch your journey path grow."
+      }
+    ]
+  },
+  "screenshots": {
+    "kicker": "See it in action",
+    "title": "Clean, colourful, and designed to keep kids focused on learning.",
+    "sub": "",
+    "caps": [
+      "Choose Your Operation",
+      "Follow Your Journey",
+      "Solve & Earn Stars",
+      "Celebrate Every Win"
+    ]
+  },
+  "cta": {
+    "title": "Start your math adventure",
+    "sub": "Free to download. First 2 levels on us. Upgrade any time for unlimited access to all levels.",
+    "scanApple": "Scan for App Store",
+    "scanPlay": "Scan for Google Play",
+    "note": "Point your phone camera at the QR code to download instantly. No account required."
+  },
+  "footer": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "support": "Support",
+    "copy": "© 2026 M4th3m4t1c4. Ages 6 – 12."
+  },
+  "legal": {
+    "back": "Back",
+    "copyLink": "Copy link to this section",
+    "copied": "✓ copied",
+    "questions": "Questions?"
+  }
+}

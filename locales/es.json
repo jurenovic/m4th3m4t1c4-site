@@ -1,0 +1,59 @@
+{
+  "meta": {"title": "M4th3m4t1c4 — Aventuras matemáticas para jóvenes héroes", "description": "Matemáticas gamificadas para edades 6–12. Sigue el camino, resuelve puzzles, gana estrellas e insignias — dominando suma, resta, multiplicación y división."},
+  "nav": {"features": "Funciones", "how": "Cómo funciona", "screenshots": "Capturas", "download": "Descargar"},
+  "hero": {
+    "eyebrow": "Matemáticas gamificadas para edades 6 – 12",
+    "titleBefore": "Mate que se siente",
+    "titleAccent": "como jugar.",
+    "lead": "Sigue un camino sinuoso, resuelve puzzles, gana estrellas e insignias — mientras dominas suma, resta, multiplicación y división.",
+    "downloadOn": "Descargar en",
+    "appStore": "App Store",
+    "getItOn": "Disponible en",
+    "googlePlay": "Google Play",
+    "loved": "· Querida por niños y padres",
+    "stats": [
+      {"value": "20+", "label": "Niveles del viaje"},
+      {"value": "4", "label": "Operaciones"},
+      {"value": "5★", "label": "Valoración App Store"},
+      {"value": "Gratis", "label": "Para empezar"}
+    ]
+  },
+  "features": {
+    "kicker": "Todo lo que los niños necesitan",
+    "title": "Hecha para jóvenes aprendices",
+    "sub": "Cada decisión de diseño se tomó pensando en niños de primaria — del tamaño de letra al espacio entre botones.",
+    "items": [
+      {"emoji": "🗺️", "title": "Camino del viaje", "desc": "Avanza por más de 20 niveles en un mapa sinuoso. Cada nivel desbloquea el siguiente y motiva a seguir."},
+      {"emoji": "➕", "title": "Las 4 operaciones", "desc": "Suma, resta, multiplicación y división — cada una con su tema de aventura y dificultad progresiva."},
+      {"emoji": "⭐", "title": "Estrellas e insignias", "desc": "Gana hasta 3 estrellas por nivel y colecciona insignias. El progreso visible hace que vuelvan cada día."},
+      {"emoji": "🔥", "title": "Rachas diarias", "desc": "Crea el hábito de practicar con rachas que premian la constancia. 5 minutos al día superan 35 minutos una vez a la semana."},
+      {"emoji": "🌙", "title": "Modo oscuro", "desc": "Tema oscuro AMOLED completo, suave con los ojos en la práctica nocturna. Se ve genial a cualquier hora."},
+      {"emoji": "✨", "title": "Feedback instantáneo", "desc": "Cada respuesta recibe feedback visual y sonoro inmediato. Los aciertos celebran; los errores explican con suavidad — sin vergüenza, solo aprendizaje."}
+    ]
+  },
+  "how": {
+    "kicker": "Cómo funciona",
+    "title": "Tres pasos del descarga al héroe de las mates.",
+    "sub": "",
+    "steps": [
+      {"n": "01", "icon": "🎯", "title": "Elige una operación", "desc": "Elige entre Arena de suma, Safari de resta, Montaña de multiplicación o Carrera de división."},
+      {"n": "02", "icon": "🧮", "title": "Resuelve preguntas", "desc": "Toca el teclado numérico grande para responder. Cada acierto llena el medidor de estrellas."},
+      {"n": "03", "icon": "🏆", "title": "Sube de nivel y colecciona", "desc": "Gana hasta 3 estrellas por nivel, desbloquea insignias y mira crecer tu camino."}
+    ]
+  },
+  "screenshots": {
+    "kicker": "Míralo en acción",
+    "title": "Limpio, colorido y diseñado para que los niños se centren en aprender.",
+    "sub": "",
+    "caps": ["Elige tu operación", "Sigue tu viaje", "Resuelve y gana estrellas", "Celebra cada victoria"]
+  },
+  "cta": {
+    "title": "Empieza tu aventura matemática",
+    "sub": "Descarga gratis. Los 2 primeros niveles van por nuestra cuenta. Mejora cuando quieras para acceso ilimitado a todos los niveles.",
+    "scanApple": "Escanear para App Store",
+    "scanPlay": "Escanear para Google Play",
+    "note": "Apunta la cámara al código QR para descargar al instante. No hace falta cuenta."
+  },
+  "footer": {"privacy": "Política de privacidad", "terms": "Términos de uso", "support": "Soporte", "copy": "© 2026 M4th3m4t1c4. Edades 6 – 12."},
+  "legal": {"back": "Atrás", "copyLink": "Copiar enlace a esta sección", "copied": "✓ copiado", "questions": "¿Preguntas?"}
+}

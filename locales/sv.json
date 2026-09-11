@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "title": "M4th3m4t1c4 — Matteäventyr för unga hjältar",
+    "description": "Spelifierad matematik för ålder 6–12. Följ stigen, lös pussel, tjäna stjärnor och märken — och bemästra addition, subtraktion, multiplikation och division."
+  },
+  "nav": {
+    "features": "Funktioner",
+    "how": "Så fungerar det",
+    "screenshots": "Skärmbilder",
+    "download": "Ladda ner"
+  },
+  "hero": {
+    "eyebrow": "Spelifierad matematik för ålder 6 – 12",
+    "titleBefore": "Matte som känns",
+    "titleAccent": "som lek.",
+    "lead": "Följ en slingrande stig, lös pussel, tjäna stjärnor och märken — samtidigt som du bemästrar addition, subtraktion, multiplikation och division.",
+    "downloadOn": "Ladda ner i",
+    "appStore": "App Store",
+    "getItOn": "Hämta den på",
+    "googlePlay": "Google Play",
+    "loved": "· Älskad av barn och föräldrar",
+    "stats": [
+      {
+        "value": "20+",
+        "label": "Stignivåer"
+      },
+      {
+        "value": "4",
+        "label": "Räkneoperationer"
+      },
+      {
+        "value": "5★",
+        "label": "App Store-betyg"
+      },
+      {
+        "value": "Gratis",
+        "label": "För att börja"
+      }
+    ]
+  },
+  "features": {
+    "kicker": "Allt barn behöver",
+    "title": "Byggd för unga elever",
+    "sub": "Varje designbeslut togs med lågstadiebarn i åtanke — från teckenstorlek till knapputrymme.",
+    "items": [
+      {
+        "emoji": "🗺️",
+        "title": "Äventyrsstig",
+        "desc": "Ta dig igenom 20+ handgjorda nivåer på en slingrande karta. Varje nivå låser upp nästa och motiverar barnen att fortsätta."
+      },
+      {
+        "emoji": "➕",
+        "title": "Alla 4 operationer",
+        "desc": "Addition, subtraktion, multiplikation och division — var och en med sitt äventyrstema och ökande svårighetsgrad."
+      },
+      {
+        "emoji": "⭐",
+        "title": "Stjärnor och märken",
+        "desc": "Tjäna upp till 3 stjärnor per nivå och samla prestationsmärken. Synliga framsteg får barnen tillbaka varje dag."
+      },
+      {
+        "emoji": "🔥",
+        "title": "Dagliga serier",
+        "desc": "Bygg en övningsvana med serier som belönar konsekvens. 5 minuter varje dag slår 35 minuter en gång i veckan."
+      },
+      {
+        "emoji": "🌙",
+        "title": "Mörkt läge",
+        "desc": "Ett fullt designat AMOLED-mörkt tema som är skonsamt för ögonen vid kvällsövning. Ser bra ut dygnet runt."
+      },
+      {
+        "emoji": "✨",
+        "title": "Omedelbar feedback",
+        "desc": "Varje svar får omedelbar visuell och ljudmässig feedback. Rätt svar firar; fel förklarar milt — utan skam, bara lärande."
+      }
+    ]
+  },
+  "how": {
+    "kicker": "Så fungerar det",
+    "title": "Tre steg från nedladdning till mattehjäte.",
+    "sub": "",
+    "steps": [
+      {
+        "n": "01",
+        "icon": "🎯",
+        "title": "Välj en operation",
+        "desc": "Välj mellan Additionsarenan, Subtraktionssafarin, Multiplikationsberget eller Divisionsdash."
+      },
+      {
+        "n": "02",
+        "icon": "🧮",
+        "title": "Lös frågor",
+        "desc": "Tryck på det stora sifferblocket för att ange svaret. Varje rätt svar fyller stjärnmätaren."
+      },
+      {
+        "n": "03",
+        "icon": "🏆",
+        "title": "Gå upp i nivå och samla",
+        "desc": "Tjäna upp till 3 stjärnor per nivå, lås upp märken och se din stig växa."
+      }
+    ]
+  },
+  "screenshots": {
+    "kicker": "Se det i action",
+    "title": "Rent, färgglatt och designat för att hålla barnen fokuserade på lärande.",
+    "sub": "",
+    "caps": [
+      "Välj operation",
+      "Följ din stig",
+      "Lös och tjäna stjärnor",
+      "Fira varje seger"
+    ]
+  },
+  "cta": {
+    "title": "Starta ditt matteäventyr",
+    "sub": "Gratis att ladda ner. De första 2 nivåerna bjuder vi på. Uppgradera när som helst för obegränsad tillgång till alla nivåer.",
+    "scanApple": "Skanna för App Store",
+    "scanPlay": "Skanna för Google Play",
+    "note": "Rikta telefonkameran mot QR-koden för omedelbar nedladdning. Inget konto krävs."
+  },
+  "footer": {
+    "privacy": "Integritetspolicy",
+    "terms": "Användarvillkor",
+    "support": "Support",
+    "copy": "© 2026 M4th3m4t1c4. Ålder 6 – 12."
+  },
+  "legal": {
+    "back": "Tillbaka",
+    "copyLink": "Kopiera länk till det här avsnittet",
+    "copied": "✓ kopierat",
+    "questions": "Frågor?"
+  }
+}

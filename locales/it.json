@@ -1,0 +1,59 @@
+{
+  "meta": {"title": "M4th3m4t1c4 — Avventure di matematica per giovani eroi", "description": "Matematica gamificata per età 6–12. Segui il percorso, risolvi enigmi, guadagna stelle e badge — padroneggiando addizione, sottrazione, moltiplicazione e divisione."},
+  "nav": {"features": "Funzionalità", "how": "Come funziona", "screenshots": "Screenshot", "download": "Scarica"},
+  "hero": {
+    "eyebrow": "Matematica gamificata per età 6 – 12",
+    "titleBefore": "La matematica che sembra",
+    "titleAccent": "un gioco.",
+    "lead": "Segui un percorso tortuoso, risolvi enigmi, guadagna stelle e badge — padroneggiando addizione, sottrazione, moltiplicazione e divisione.",
+    "downloadOn": "Scarica su",
+    "appStore": "App Store",
+    "getItOn": "Disponibile su",
+    "googlePlay": "Google Play",
+    "loved": "· Amata da bambini e genitori",
+    "stats": [
+      {"value": "20+", "label": "Livelli del viaggio"},
+      {"value": "4", "label": "Operazioni"},
+      {"value": "5★", "label": "Valutazione App Store"},
+      {"value": "Gratis", "label": "Per iniziare"}
+    ]
+  },
+  "features": {
+    "kicker": "Tutto ciò di cui i bambini hanno bisogno",
+    "title": "Pensata per i giovani apprendisti",
+    "sub": "Ogni scelta di design è stata fatta pensando ai bambini della scuola elementare — dalla dimensione del testo alla distanza dei pulsanti.",
+    "items": [
+      {"emoji": "🗺️", "title": "Percorso", "desc": "Avanza attraverso oltre 20 livelli su una mappa tortuosa. Ogni livello sblocca il successivo e motiva i bambini."},
+      {"emoji": "➕", "title": "Tutte e 4 le operazioni", "desc": "Addizione, sottrazione, moltiplicazione e divisione — ciascuna con un tema avventuroso e difficoltà progressiva."},
+      {"emoji": "⭐", "title": "Stelle e badge", "desc": "Guadagna fino a 3 stelle per livello e colleziona badge. Il progresso visibile fa tornare i bambini ogni giorno."},
+      {"emoji": "🔥", "title": "Serie giornaliere", "desc": "Crea l'abitudine di esercitarsi con serie che premiano la costanza. 5 minuti al giorno battono 35 minuti una volta a settimana."},
+      {"emoji": "🌙", "title": "Modalità scura", "desc": "Tema scuro AMOLED completo, delicato sugli occhi nella pratica serale. Bellissimo a ogni ora."},
+      {"emoji": "✨", "title": "Feedback istantaneo", "desc": "Ogni risposta riceve feedback visivo e sonoro immediato. Le risposte giuste celebrano; quelle sbagliate spiegano con delicatezza — senza vergogna, solo apprendimento."}
+    ]
+  },
+  "how": {
+    "kicker": "Come funziona",
+    "title": "Tre passi dal download all'eroe della matematica.",
+    "sub": "",
+    "steps": [
+      {"n": "01", "icon": "🎯", "title": "Scegli un'operazione", "desc": "Scegli tra Arena dell'addizione, Safari della sottrazione, Montagna della moltiplicazione o Corsa della divisione."},
+      {"n": "02", "icon": "🧮", "title": "Risolvi le domande", "desc": "Tocca il grande tastierino per inserire la risposta. Ogni risposta corretta riempie l'indicatore delle stelle."},
+      {"n": "03", "icon": "🏆", "title": "Sali di livello e colleziona", "desc": "Guadagna fino a 3 stelle per livello, sblocca badge e guarda crescere il tuo percorso."}
+    ]
+  },
+  "screenshots": {
+    "kicker": "Guardalo in azione",
+    "title": "Pulito, colorato e progettato per tenere i bambini concentrati sull'apprendimento.",
+    "sub": "",
+    "caps": ["Scegli l'operazione", "Segui il tuo viaggio", "Risolvi e guadagna stelle", "Festeggia ogni vittoria"]
+  },
+  "cta": {
+    "title": "Inizia la tua avventura matematica",
+    "sub": "Download gratuito. I primi 2 livelli sono offerti. Passa alla versione completa quando vuoi per accesso illimitato.",
+    "scanApple": "Scansiona per App Store",
+    "scanPlay": "Scansiona per Google Play",
+    "note": "Punta la fotocamera sul codice QR per scaricare subito. Nessun account richiesto."
+  },
+  "footer": {"privacy": "Informativa sulla privacy", "terms": "Termini di utilizzo", "support": "Supporto", "copy": "© 2026 M4th3m4t1c4. Età 6 – 12."},
+  "legal": {"back": "Indietro", "copyLink": "Copia link a questa sezione", "copied": "✓ copiato", "questions": "Domande?"}
+}

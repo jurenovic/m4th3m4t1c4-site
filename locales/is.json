@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "title": "M4th3m4t1c4 — Stærðfræðiævintýri fyrir unga hetjur",
+    "description": "Leikjavædd stærðfræði fyrir aldur 6 – 12. Fylgdu slóðinni, leystu þrautir, safnaðu stjörnum og merki — og lærðu samlagningu, frádrátt, margföldun og deilingu."
+  },
+  "nav": {
+    "features": "Eiginleikar",
+    "how": "Hvernig það virkar",
+    "screenshots": "Skjámyndir",
+    "download": "Sækja"
+  },
+  "hero": {
+    "eyebrow": "Leikjavædd stærðfræði fyrir aldur 6 – 12",
+    "titleBefore": "Stærðfræði sem finnst",
+    "titleAccent": "eins og leikur.",
+    "lead": "Fylgdu bugðóttri slóð, leystu þrautir, safnaðu stjörnum og merki — og lærðu samlagningu, frádrátt, margföldun og deilingu.",
+    "downloadOn": "Sækja í",
+    "appStore": "App Store",
+    "getItOn": "Fáðu það á",
+    "googlePlay": "Google Play",
+    "loved": "· Elskað af börnum og foreldrum",
+    "stats": [
+      {
+        "value": "20+",
+        "label": "Leiðarstig"
+      },
+      {
+        "value": "4",
+        "label": "Reikniaðgerðir"
+      },
+      {
+        "value": "5★",
+        "label": "App Store einkunn"
+      },
+      {
+        "value": "Ókeypis",
+        "label": "Til að byrja"
+      }
+    ]
+  },
+  "features": {
+    "kicker": "Allt sem börn þurfa",
+    "title": "Byggt fyrir unga nemendur",
+    "sub": "Allar hönnunarákvarðanir voru teknar með grunnskólabörn í huga — frá leturstærð til bil milli hnappa.",
+    "items": [
+      {
+        "emoji": "🗺️",
+        "title": "Ævintýraslóð",
+        "desc": "Farðu í gegnum 20+ handunnin stig á bugðóttu korti. Hvert stig opnar næsta og heldur börnum áfram."
+      },
+      {
+        "emoji": "➕",
+        "title": "Allar 4 aðgerðir",
+        "desc": "Samlagning, frádráttur, margföldun og deiling — hver með eigin ævintýraþema og vaxandi erfiðleika."
+      },
+      {
+        "emoji": "⭐",
+        "title": "Stjörnur og merki",
+        "desc": "Vinndu allt að 3 stjörnur á stig og safnaðu afrekumerki. Sýnileg framvinda fær börn til baka á hverjum degi."
+      },
+      {
+        "emoji": "🔥",
+        "title": "Daglegar lotur",
+        "desc": "Byggðu æfingavenju með lotum sem verðlauna stöðugleika. 5 mínútur á dag vinna yfir 35 mínútum einu sinni í viku."
+      },
+      {
+        "emoji": "🌙",
+        "title": "Dökkur hamur",
+        "desc": "Fullhannað AMOLED dökk þema sem er mjúkt fyrir augun við kvöldæfingar. Lítur vel út alla daga."
+      },
+      {
+        "emoji": "✨",
+        "title": "Strax endurgjöf",
+        "desc": "Hvert svar fær strax sjónræna og hljóðlega endurgjöf. Rétt svör fagna; röng útskýra mildilega — engin skömm, bara nám."
+      }
+    ]
+  },
+  "how": {
+    "kicker": "Hvernig það virkar",
+    "title": "Þrjú skref frá niðurhali til stærðfræðihetju.",
+    "sub": "",
+    "steps": [
+      {
+        "n": "01",
+        "icon": "🎯",
+        "title": "Veldu aðgerð",
+        "desc": "Veldu úr Samlagningararenunni, Frádráttarsafaríinu, Margföldunarfjallinu eða Deilingarhringrásinni."
+      },
+      {
+        "n": "02",
+        "icon": "🧮",
+        "title": "Leystu spurningar",
+        "desc": "Ýttu á stóra talnaborðið til að slá inn svarið. Hvert rétt svar fyllir stjörnumælinn."
+      },
+      {
+        "n": "03",
+        "icon": "🏆",
+        "title": "Hækkaðu um stig og safnaðu",
+        "desc": "Vinndu allt að 3 stjörnur á stig, opnaðu merki og horfðu á slóðina vaxa."
+      }
+    ]
+  },
+  "screenshots": {
+    "kicker": "Sjáðu það í aðgerð",
+    "title": "Hreint, litríkt og hannað til að halda börnum einbeittum að námi.",
+    "sub": "",
+    "caps": [
+      "Veldu aðgerð",
+      "Fylgdu slóðinni þinni",
+      "Leystu og safnaðu stjörnum",
+      "Fagnaðu hverjum sigri"
+    ]
+  },
+  "cta": {
+    "title": "Byrjaðu stærðfræðiævintýrið þitt",
+    "sub": "Ókeypis að sækja. Fyrstu 2 stigin á okkur. Uppfærðu hvenær sem er fyrir ótakmarkaðan aðgang að öllum stigum.",
+    "scanApple": "Skannaðu fyrir App Store",
+    "scanPlay": "Skannaðu fyrir Google Play",
+    "note": "Beindu myndavél síma að QR-kóðanum til að sækja strax. Enginn reikningur nauðsynlegur."
+  },
+  "footer": {
+    "privacy": "Persónuverndarstefna",
+    "terms": "Notkunarskilmálar",
+    "support": "Aðstoð",
+    "copy": "© 2026 M4th3m4t1c4. Aldur 6 – 12."
+  },
+  "legal": {
+    "back": "Til baka",
+    "copyLink": "Afrita tengil á þennan kafla",
+    "copied": "✓ afritað",
+    "questions": "Spurningar?"
+  }
+}
