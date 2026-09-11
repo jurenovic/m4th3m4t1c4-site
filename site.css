@@ -194,7 +194,7 @@ section { padding: 72px 0; }
 .cta h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin: 0 0 12px; }
 .cta p { color: rgba(255,255,255,0.82); font-weight: 600; max-width: 34rem; margin: 0 auto 28px; }
 .qr-row {
-  --cta-col: 200px;
+  --cta-col: 260px;
   display: grid;
   grid-template-columns: repeat(2, var(--cta-col));
   justify-content: center;
