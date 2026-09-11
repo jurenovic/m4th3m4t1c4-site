@@ -8,13 +8,34 @@
   var EMAIL = window.M4_SUPPORT_EMAIL;
   var STORAGE_KEY = 'm4th:lang';
   var cache = {};
-  var state = { lang: DEFAULT, view: 'home', strings: null, menuOpen: false, langOpen: false };
+  var state = { lang: DEFAULT, view: 'home', strings: null };
+
+  // Base URL of the site root (directory containing app.js), works on custom domain and project Pages.
+  var SITE_BASE = (function () {
+    var scripts = document.getElementsByTagName('script');
+    for (var i = 0; i < scripts.length; i++) {
+      var src = scripts[i].getAttribute('src') || '';
+      if (/app\.js(\?|$)/.test(src)) {
+        if (/^https?:/i.test(src)) {
+          return src.replace(/app\.js(\?.*)?$/, '');
+        }
+        // relative src like ./app.js → resolve against current path's site root guess
+        var abs = new URL(src, location.href).href;
+        return abs.replace(/app\.js(\?.*)?$/, '');
+      }
+    }
+    return location.origin + '/';
+  })();
+
+  function joinBase(path) {
+    return SITE_BASE.replace(/\/?$/, '/') + String(path).replace(/^\//, '');
+  }
 
   var ASSETS = {
-    journey: './assets/light-journey-xMfei9hJ.png',
-    practise: './assets/light-free-practise-i24tnlOp.png',
-    question: './assets/light-question-DAvM9LYx.png',
-    success: './assets/light-success-DACb4oEo.png',
+    journey: joinBase('assets/light-journey-xMfei9hJ.png'),
+    practise: joinBase('assets/light-free-practise-i24tnlOp.png'),
+    question: joinBase('assets/light-question-DAvM9LYx.png'),
+    success: joinBase('assets/light-success-DACb4oEo.png'),
   };
 
   var FEATURE_COLORS = [
@@ -37,36 +58,38 @@
     for (var i = 0; i < list.length; i++) {
       var raw = (list[i] || '').toLowerCase();
       var primary = raw.split('-')[0];
-      // nb/no mapping
       if (primary === 'no') primary = 'nb';
       if (supportedCodes().indexOf(primary) !== -1) return primary;
     }
     return DEFAULT;
   }
 
-  function parseRoute() {
-    // Restore path after 404.html redirect
+  function pathRelativeToBase() {
     var redirected = sessionStorage.getItem('m4th:redirect');
     if (redirected) {
       sessionStorage.removeItem('m4th:redirect');
       history.replaceState(null, '', redirected);
     }
-    var path = location.pathname.replace(/\/+/g, '/');
-    // Strip trailing index.html
-    path = path.replace(/\/index\.html$/i, '/');
+    var full = location.pathname;
+    var basePath = new URL(SITE_BASE).pathname; // e.g. / or /m4th3m4t1c4-site/
+    if (basePath !== '/' && full.indexOf(basePath) === 0) {
+      full = full.slice(basePath.length - 1); // keep leading /
+    }
+    full = full.replace(/\/+/g, '/').replace(/\/index\.html$/i, '/');
+    return full;
+  }
+
+  function parseRoute() {
+    var path = pathRelativeToBase();
     var parts = path.split('/').filter(Boolean);
-    // If first segment is a language code
     var lang = null;
     var view = 'home';
     if (parts.length && supportedCodes().indexOf(parts[0]) !== -1) {
       lang = parts[0];
       if (parts[1] === 'privacy') view = 'privacy';
       else if (parts[1] === 'terms') view = 'terms';
-    } else if (parts[0] === 'privacy') {
-      view = 'privacy';
-    } else if (parts[0] === 'terms') {
-      view = 'terms';
-    }
+    } else if (parts[0] === 'privacy') view = 'privacy';
+    else if (parts[0] === 'terms') view = 'terms';
     return { lang: lang, view: view };
   }
 
@@ -80,10 +103,11 @@
   }
 
   function localePath(lang, view) {
-    var base = '/' + lang + '/';
-    if (view === 'privacy') return base + 'privacy';
-    if (view === 'terms') return base + 'terms';
-    return base;
+    var basePath = new URL(SITE_BASE).pathname.replace(/\/?$/, '/');
+    var p = basePath + lang + '/';
+    if (view === 'privacy') p += 'privacy';
+    else if (view === 'terms') p += 'terms';
+    return p;
   }
 
   function navigate(lang, view, replace) {
@@ -108,7 +132,7 @@
 
   function loadLocale(code) {
     if (cache[code]) return Promise.resolve(cache[code]);
-    return fetch('./locales/' + code + '.json')
+    return fetch(joinBase('locales/' + code + '.json'))
       .then(function (r) {
         if (!r.ok) throw new Error('missing locale ' + code);
         return r.json();
@@ -210,28 +234,24 @@
             '<div class="phone p2"><img src="' + ASSETS.success + '" alt="" /></div>' +
           '</div>' +
         '</div></section>' +
-
         '<section id="features"><div class="container">' +
           '<div class="section-kicker">' + esc(s.features.kicker) + '</div>' +
           '<h2 class="section-title">' + esc(s.features.title) + '</h2>' +
           '<p class="section-sub">' + esc(s.features.sub) + '</p>' +
           '<div class="features">' + feats + '</div>' +
         '</div></section>' +
-
         '<section class="how" id="how"><div class="container">' +
           '<div class="section-kicker">' + esc(s.how.kicker) + '</div>' +
           '<h2 class="section-title">' + esc(s.how.title) + '</h2>' +
           '<p class="section-sub">' + esc(s.how.sub) + '</p>' +
           '<div class="steps">' + steps + '</div>' +
         '</div></section>' +
-
         '<section id="screenshots"><div class="container">' +
           '<div class="section-kicker">' + esc(s.screenshots.kicker) + '</div>' +
           '<h2 class="section-title">' + esc(s.screenshots.title) + '</h2>' +
           '<p class="section-sub">' + esc(s.screenshots.sub) + '</p>' +
           '<div class="shots-grid">' + shots + '</div>' +
         '</div></section>' +
-
         '<section class="cta" id="download"><div class="container">' +
           '<h2>' + esc(s.cta.title) + '</h2>' +
           '<p>' + esc(s.cta.sub) + '</p>' +
@@ -311,21 +331,19 @@
           ev.preventDefault();
           navigate(state.lang, 'home');
           setTimeout(function () {
-            var t = document.getElementById(el.getAttribute('data-scroll'));
-            if (t) t.scrollIntoView({ behavior: 'smooth' });
-          }, 50);
+            var target = document.getElementById(el.getAttribute('data-scroll'));
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+          }, 80);
           return;
         }
-        var t = document.getElementById(el.getAttribute('data-scroll'));
-        if (t) { ev.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+        var target = document.getElementById(el.getAttribute('data-scroll'));
+        if (target) { ev.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
       });
     });
     var menuToggle = document.getElementById('menuToggle');
     var navLinks = document.getElementById('navLinks');
     if (menuToggle && navLinks) {
-      menuToggle.addEventListener('click', function () {
-        navLinks.classList.toggle('open');
-      });
+      menuToggle.addEventListener('click', function () { navLinks.classList.toggle('open'); });
     }
     var langBtn = document.getElementById('langBtn');
     var langMenu = document.getElementById('langMenu');
@@ -339,7 +357,9 @@
           navigate(btn.getAttribute('data-lang'), state.view);
         });
       });
-      document.addEventListener('click', function () { langMenu.classList.remove('open'); }, { once: true });
+      setTimeout(function () {
+        document.addEventListener('click', function () { langMenu.classList.remove('open'); }, { once: true });
+      }, 0);
     }
     var copyBtn = document.getElementById('copySection');
     if (copyBtn) {
@@ -361,11 +381,9 @@
     var s = t();
     setDocumentMeta(s, state.lang);
     var root = document.getElementById('root');
-    if (state.view === 'privacy' || state.view === 'terms') {
-      root.innerHTML = renderLegal(s, state.view);
-    } else {
-      root.innerHTML = renderHome(s);
-    }
+    root.innerHTML = (state.view === 'privacy' || state.view === 'terms')
+      ? renderLegal(s, state.view)
+      : renderHome(s);
     bindUi();
   }
 
@@ -389,10 +407,8 @@
     var route = parseRoute();
     state.view = route.view;
     state.lang = resolveLang(route.lang);
-    // Normalize URL to include lang prefix
     var desired = localePath(state.lang, state.view);
-    if (location.pathname.replace(/\/+/g, '/') !== desired &&
-        location.pathname.replace(/\/index\.html$/i, '/') !== desired) {
+    if (location.pathname !== desired) {
       history.replaceState({ lang: state.lang, view: state.view }, '', desired);
     }
     try { localStorage.setItem(STORAGE_KEY, state.lang); } catch (e) {}
@@ -406,9 +422,6 @@
     loadAndRender();
   });
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot);
-  } else {
-    boot();
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
 })();
