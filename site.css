@@ -323,15 +323,16 @@ section { padding: 72px 0; }
 
   /* Screenshots: horizontal snap-scroll on phones only */
   .shots-grid {
+    --shot-card: min(62vw, 220px);
     display: flex;
     flex-wrap: nowrap;
-    gap: 14px;
+    gap: 8px;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
-    scroll-padding-inline: 20px;
-    padding: 4px 20px 12px;
+    scroll-padding-inline: max(12px, calc(50% - var(--shot-card) / 2));
+    padding: 4px max(12px, calc(50% - var(--shot-card) / 2)) 12px;
     margin-inline: -20px;
     width: calc(100% + 40px);
     max-width: none;
@@ -342,8 +343,8 @@ section { padding: 72px 0; }
     background: rgba(240, 80, 58, 0.35); border-radius: 999px;
   }
   .shot {
-    flex: 0 0 min(72vw, 260px);
-    scroll-snap-align: start;
-    max-width: min(72vw, 260px);
+    flex: 0 0 var(--shot-card);
+    scroll-snap-align: center;
+    max-width: var(--shot-card);
   }
 }
