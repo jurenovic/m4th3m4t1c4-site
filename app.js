@@ -261,9 +261,14 @@
     if (!el || !window.qrcode) return;
     try {
       var qr = qrcode(0, 'M'); qr.addData(text); qr.make();
-      el.innerHTML = qr.createImgTag(4, 8);
+      // cell size 8, quiet-zone margin 1 — CSS stretches the img to fill .qr-box
+      el.innerHTML = qr.createImgTag(8, 1);
       var img = el.querySelector('img');
-      if (img) { img.alt = text; img.width = 140; img.height = 140; }
+      if (img) {
+        img.alt = text;
+        img.removeAttribute('width');
+        img.removeAttribute('height');
+      }
     } catch (e) { el.textContent = text; }
   }
 
