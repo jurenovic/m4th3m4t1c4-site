@@ -224,11 +224,16 @@
       '<section class="cta" id="download"><div class="container">' +
         '<h2>' + esc(s.cta.title) + '</h2><p>' + esc(s.cta.sub) + '</p>' +
         '<div class="qr-row">' +
-          '<div class="qr-card"><div class="qr-box" id="qrApple"></div><div class="qr-label">' + esc(s.cta.scanApple) + '</div></div>' +
-          '<div class="qr-card"><div class="qr-box" id="qrPlay"></div><div class="qr-label">' + esc(s.cta.scanPlay) + '</div></div></div>' +
-        '<div class="store-row" style="justify-content:center">' +
-          storeBadge(APP_STORE, s.hero.downloadOn, s.hero.appStore, appleSvg) +
-          storeBadge(PLAY_STORE, s.hero.getItOn, s.hero.googlePlay, playSvg) + '</div>' +
+          '<div class="qr-card">' +
+            '<div class="qr-box" id="qrApple"></div>' +
+            '<div class="qr-label">' + esc(s.cta.scanApple) + '</div>' +
+            storeBadge(APP_STORE, s.hero.downloadOn, s.hero.appStore, appleSvg) +
+          '</div>' +
+          '<div class="qr-card">' +
+            '<div class="qr-box" id="qrPlay"></div>' +
+            '<div class="qr-label">' + esc(s.cta.scanPlay) + '</div>' +
+            storeBadge(PLAY_STORE, s.hero.getItOn, s.hero.googlePlay, playSvg) +
+          '</div></div>' +
         '<p class="cta-note">' + esc(s.cta.note) + '</p></div></section></main>' + renderFooter(s);
   }
 
