@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M4th3m4t1c4</title>
+    <script>
+      // GitHub Pages SPA fallback: rewrite unknown paths (e.g. /sl/, /de/privacy)
+      // back to index.html while preserving the path for client-side routing.
+      (function () {
+        var loc = window.location;
+        var path = loc.pathname;
+        // If served from a project site under /repo-name/, keep that prefix.
+        var segs = path.split('/').filter(Boolean);
+        var base = '/';
+        // Custom domain uses root; project pages may have one segment as repo name.
+        // We always redirect to /index.html?p=<path> then app restores history.
+        sessionStorage.setItem('m4th:redirect', path + loc.search + loc.hash);
+        loc.replace(base + 'index.html');
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
