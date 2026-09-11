@@ -10,16 +10,11 @@
   var cache = {};
   var state = { lang: DEFAULT, view: 'home', strings: null };
 
-  // Base URL of the site root (directory containing app.js), works on custom domain and project Pages.
   var SITE_BASE = (function () {
     var scripts = document.getElementsByTagName('script');
     for (var i = 0; i < scripts.length; i++) {
       var src = scripts[i].getAttribute('src') || '';
       if (/app\.js(\?|$)/.test(src)) {
-        if (/^https?:/i.test(src)) {
-          return src.replace(/app\.js(\?.*)?$/, '');
-        }
-        // relative src like ./app.js → resolve against current path's site root guess
         var abs = new URL(src, location.href).href;
         return abs.replace(/app\.js(\?.*)?$/, '');
       }
@@ -47,17 +42,13 @@
     { color: '#f0503a', bg: '#FFF0EF' },
   ];
 
-  function supportedCodes() {
-    return LANGS.map(function (l) { return l.code; });
-  }
+  function supportedCodes() { return LANGS.map(function (l) { return l.code; }); }
 
   function detectBrowserLang() {
     var list = navigator.languages && navigator.languages.length
-      ? navigator.languages
-      : [navigator.language || navigator.userLanguage || DEFAULT];
+      ? navigator.languages : [navigator.language || navigator.userLanguage || DEFAULT];
     for (var i = 0; i < list.length; i++) {
-      var raw = (list[i] || '').toLowerCase();
-      var primary = raw.split('-')[0];
+      var primary = (list[i] || '').toLowerCase().split('-')[0];
       if (primary === 'no') primary = 'nb';
       if (supportedCodes().indexOf(primary) !== -1) return primary;
     }
@@ -71,19 +62,16 @@
       history.replaceState(null, '', redirected);
     }
     var full = location.pathname;
-    var basePath = new URL(SITE_BASE).pathname; // e.g. / or /m4th3m4t1c4-site/
+    var basePath = new URL(SITE_BASE).pathname;
     if (basePath !== '/' && full.indexOf(basePath) === 0) {
-      full = full.slice(basePath.length - 1); // keep leading /
+      full = '/' + full.slice(basePath.length).replace(/^\/+/, '');
     }
-    full = full.replace(/\/+/g, '/').replace(/\/index\.html$/i, '/');
-    return full;
+    return full.replace(/\/+/g, '/').replace(/\/index\.html$/i, '/');
   }
 
   function parseRoute() {
-    var path = pathRelativeToBase();
-    var parts = path.split('/').filter(Boolean);
-    var lang = null;
-    var view = 'home';
+    var parts = pathRelativeToBase().split('/').filter(Boolean);
+    var lang = null, view = 'home';
     if (parts.length && supportedCodes().indexOf(parts[0]) !== -1) {
       lang = parts[0];
       if (parts[1] === 'privacy') view = 'privacy';
@@ -110,10 +98,8 @@
     return p;
   }
 
-  function navigate(lang, view, replace) {
-    var url = localePath(lang, view || 'home');
-    if (replace) history.replaceState({ lang: lang, view: view }, '', url);
-    else history.pushState({ lang: lang, view: view }, '', url);
+  function navigate(lang, view) {
+    history.pushState({ lang: lang, view: view }, '', localePath(lang, view || 'home'));
     state.lang = lang;
     state.view = view || 'home';
     try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
@@ -121,26 +107,38 @@
   }
 
   function t() { return state.strings || {}; }
-
   function esc(s) {
-    return String(s == null ? '' : s)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+    return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function fetchText(url) {
+    return fetch(url).then(function (r) {
+      if (!r.ok) throw new Error('missing ' + url);
+      return r.text();
+    });
   }
 
   function loadLocale(code) {
     if (cache[code]) return Promise.resolve(cache[code]);
-    return fetch(joinBase('locales/' + code + '.json'))
-      .then(function (r) {
+    return Promise.all([
+      fetch(joinBase('locales/' + code + '.json')).then(function (r) {
         if (!r.ok) throw new Error('missing locale ' + code);
         return r.json();
-      })
-      .then(function (json) {
-        cache[code] = json;
-        return json;
-      });
+      }),
+      fetchText(joinBase('locales/' + code + '/privacy.md')).catch(function () {
+        return fetchText(joinBase('locales/en/privacy.md'));
+      }),
+      fetchText(joinBase('locales/' + code + '/terms.md')).catch(function () {
+        return fetchText(joinBase('locales/en/terms.md'));
+      }),
+    ]).then(function (parts) {
+      var json = parts[0];
+      json.legal = json.legal || {};
+      json.legal.privacy = parts[1];
+      json.legal.terms = parts[2];
+      cache[code] = json;
+      return json;
+    });
   }
 
   function setDocumentMeta(s, lang) {
@@ -151,12 +149,8 @@
   }
 
   function storeBadge(href, small, strong, svg) {
-    return (
-      '<a class="store-badge" href="' + href + '" target="_blank" rel="noopener noreferrer">' +
-        svg +
-        '<span><small>' + esc(small) + '</small><strong>' + esc(strong) + '</strong></span>' +
-      '</a>'
-    );
+    return '<a class="store-badge" href="' + href + '" target="_blank" rel="noopener noreferrer">' +
+      svg + '<span><small>' + esc(small) + '</small><strong>' + esc(strong) + '</strong></span></a>';
   }
 
   var appleSvg = '<svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.42 2.2-1.18 3.02-.8.88-2.12 1.56-3.26 1.46-.14-1.1.42-2.26 1.16-3.06.82-.9 2.24-1.56 3.28-1.42zM20.7 17.3c-.54 1.24-.8 1.78-1.5 2.86-.98 1.5-2.36 3.36-4.08 3.38-1.52.02-1.92-.98-4-.98-2.1 0-2.54.96-4.04.98-1.72.04-3.04-1.72-4.02-3.2C1.1 17.1-.5 12.4 1.56 9.18c1.02-1.6 2.64-2.62 4.46-2.64 1.74-.04 3.38 1.18 4 1.18.6 0 2.56-1.46 4.32-1.24.74.04 2.82.3 4.16 2.24-.1.06-2.48 1.46-2.46 4.36.04 3.44 3 4.58 3.02 4.6-.02.06-.46 1.62-1.36 3.62z"/></svg>';
@@ -168,37 +162,29 @@
       return '<button type="button" class="lang-item' + (l.code === state.lang ? ' active' : '') +
         '" data-lang="' + l.code + '">' + l.flag + ' ' + esc(l.name) + '</button>';
     }).join('');
-    return (
-      '<header class="nav"><div class="container nav-inner">' +
-        '<a class="brand" href="' + localePath(state.lang, 'home') + '" data-nav="home">M4th3m4t1c4</a>' +
-        '<button type="button" class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>' +
-        '<nav class="nav-links" id="navLinks">' +
-          '<a href="#features" data-scroll="features">' + esc(s.nav.features) + '</a>' +
-          '<a href="#how" data-scroll="how">' + esc(s.nav.how) + '</a>' +
-          '<a href="#screenshots" data-scroll="screenshots">' + esc(s.nav.screenshots) + '</a>' +
-          '<a class="nav-cta" href="#download" data-scroll="download">' + esc(s.nav.download) + '</a>' +
-          '<div class="lang-wrap">' +
-            '<button type="button" class="lang-btn" id="langBtn" aria-haspopup="listbox">' +
-              lang.flag + ' ' + esc(lang.name) + ' ▾</button>' +
-            '<div class="lang-menu" id="langMenu" role="listbox">' + items + '</div>' +
-          '</div>' +
-        '</nav>' +
-      '</div></header>'
-    );
+    return '<header class="nav"><div class="container nav-inner">' +
+      '<a class="brand" href="' + localePath(state.lang, 'home') + '" data-nav="home">M4th3m4t1c4</a>' +
+      '<button type="button" class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>' +
+      '<nav class="nav-links" id="navLinks">' +
+        '<a href="#features" data-scroll="features">' + esc(s.nav.features) + '</a>' +
+        '<a href="#how" data-scroll="how">' + esc(s.nav.how) + '</a>' +
+        '<a href="#screenshots" data-scroll="screenshots">' + esc(s.nav.screenshots) + '</a>' +
+        '<a class="nav-cta" href="#download" data-scroll="download">' + esc(s.nav.download) + '</a>' +
+        '<div class="lang-wrap">' +
+          '<button type="button" class="lang-btn" id="langBtn">' + lang.flag + ' ' + esc(lang.name) + ' ▾</button>' +
+          '<div class="lang-menu" id="langMenu">' + items + '</div></div></nav></div></header>';
   }
 
   function renderHome(s) {
     var feats = s.features.items.map(function (item, i) {
       var c = FEATURE_COLORS[i % FEATURE_COLORS.length];
-      return '<article class="feature"><div class="emoji" style="background:' + c.bg + '">' +
-        item.emoji + '</div><h3>' + esc(item.title) + '</h3><p>' + esc(item.desc) + '</p></article>';
+      return '<article class="feature"><div class="emoji" style="background:' + c.bg + '">' + item.emoji +
+        '</div><h3>' + esc(item.title) + '</h3><p>' + esc(item.desc) + '</p></article>';
     }).join('');
-
     var steps = s.how.steps.map(function (step) {
-      return '<article class="step"><div class="n">' + esc(step.n) + ' ' + step.icon +
-        '</div><h3>' + esc(step.title) + '</h3><p>' + esc(step.desc) + '</p></article>';
+      return '<article class="step"><div class="n">' + esc(step.n) + ' ' + step.icon + '</div><h3>' +
+        esc(step.title) + '</h3><p>' + esc(step.desc) + '</p></article>';
     }).join('');
-
     var shots = [
       { src: ASSETS.practise, cap: s.screenshots.caps[0] },
       { src: ASSETS.journey, cap: s.screenshots.caps[1] },
@@ -208,112 +194,72 @@
       return '<figure class="shot"><img src="' + sh.src + '" alt="' + esc(sh.cap) +
         '" loading="lazy" /><figcaption>' + esc(sh.cap) + '</figcaption></figure>';
     }).join('');
-
     var stats = s.hero.stats.map(function (st) {
       return '<div class="stat"><div class="num">' + esc(st.value) + '</div><div class="label">' +
         esc(st.label) + '</div></div>';
     }).join('');
-
-    return (
-      renderNav(s) +
-      '<main>' +
-        '<section class="hero"><div class="container hero-grid">' +
-          '<div>' +
-            '<div class="eyebrow">' + esc(s.hero.eyebrow) + '</div>' +
-            '<h1>' + esc(s.hero.titleBefore) + ' <span class="accent">' + esc(s.hero.titleAccent) + '</span></h1>' +
-            '<p class="hero-lead">' + esc(s.hero.lead) + '</p>' +
-            '<div class="store-row">' +
-              storeBadge(APP_STORE, s.hero.downloadOn, s.hero.appStore, appleSvg) +
-              storeBadge(PLAY_STORE, s.hero.getItOn, s.hero.googlePlay, playSvg) +
-            '</div>' +
-            '<div class="loved">' + esc(s.hero.loved) + '</div>' +
-            '<div class="stats">' + stats + '</div>' +
-          '</div>' +
-          '<div class="phone-stack" aria-hidden="true">' +
-            '<div class="phone p1"><img src="' + ASSETS.journey + '" alt="" /></div>' +
-            '<div class="phone p2"><img src="' + ASSETS.success + '" alt="" /></div>' +
-          '</div>' +
-        '</div></section>' +
-        '<section id="features"><div class="container">' +
-          '<div class="section-kicker">' + esc(s.features.kicker) + '</div>' +
-          '<h2 class="section-title">' + esc(s.features.title) + '</h2>' +
-          '<p class="section-sub">' + esc(s.features.sub) + '</p>' +
-          '<div class="features">' + feats + '</div>' +
-        '</div></section>' +
-        '<section class="how" id="how"><div class="container">' +
-          '<div class="section-kicker">' + esc(s.how.kicker) + '</div>' +
-          '<h2 class="section-title">' + esc(s.how.title) + '</h2>' +
-          '<p class="section-sub">' + esc(s.how.sub) + '</p>' +
-          '<div class="steps">' + steps + '</div>' +
-        '</div></section>' +
-        '<section id="screenshots"><div class="container">' +
-          '<div class="section-kicker">' + esc(s.screenshots.kicker) + '</div>' +
-          '<h2 class="section-title">' + esc(s.screenshots.title) + '</h2>' +
-          '<p class="section-sub">' + esc(s.screenshots.sub) + '</p>' +
-          '<div class="shots-grid">' + shots + '</div>' +
-        '</div></section>' +
-        '<section class="cta" id="download"><div class="container">' +
-          '<h2>' + esc(s.cta.title) + '</h2>' +
-          '<p>' + esc(s.cta.sub) + '</p>' +
-          '<div class="qr-row">' +
-            '<div class="qr-card"><div class="qr-box" id="qrApple"></div><div class="qr-label">' +
-              esc(s.cta.scanApple) + '</div></div>' +
-            '<div class="qr-card"><div class="qr-box" id="qrPlay"></div><div class="qr-label">' +
-              esc(s.cta.scanPlay) + '</div></div>' +
-          '</div>' +
-          '<div class="store-row" style="justify-content:center">' +
-            storeBadge(APP_STORE, s.hero.downloadOn, s.hero.appStore, appleSvg) +
-            storeBadge(PLAY_STORE, s.hero.getItOn, s.hero.googlePlay, playSvg) +
-          '</div>' +
-          '<p class="cta-note">' + esc(s.cta.note) + '</p>' +
-        '</div></section>' +
-      '</main>' +
-      renderFooter(s)
-    );
+    return renderNav(s) + '<main>' +
+      '<section class="hero"><div class="container hero-grid"><div>' +
+        '<div class="eyebrow">' + esc(s.hero.eyebrow) + '</div>' +
+        '<h1>' + esc(s.hero.titleBefore) + ' <span class="accent">' + esc(s.hero.titleAccent) + '</span></h1>' +
+        '<p class="hero-lead">' + esc(s.hero.lead) + '</p>' +
+        '<div class="store-row">' + storeBadge(APP_STORE, s.hero.downloadOn, s.hero.appStore, appleSvg) +
+          storeBadge(PLAY_STORE, s.hero.getItOn, s.hero.googlePlay, playSvg) + '</div>' +
+        '<div class="loved">' + esc(s.hero.loved) + '</div><div class="stats">' + stats + '</div></div>' +
+        '<div class="phone-stack" aria-hidden="true">' +
+          '<div class="phone p1"><img src="' + ASSETS.journey + '" alt="" /></div>' +
+          '<div class="phone p2"><img src="' + ASSETS.success + '" alt="" /></div></div></div></section>' +
+      '<section id="features"><div class="container">' +
+        '<div class="section-kicker">' + esc(s.features.kicker) + '</div>' +
+        '<h2 class="section-title">' + esc(s.features.title) + '</h2>' +
+        '<p class="section-sub">' + esc(s.features.sub) + '</p><div class="features">' + feats + '</div></div></section>' +
+      '<section class="how" id="how"><div class="container">' +
+        '<div class="section-kicker">' + esc(s.how.kicker) + '</div>' +
+        '<h2 class="section-title">' + esc(s.how.title) + '</h2>' +
+        '<p class="section-sub">' + esc(s.how.sub) + '</p><div class="steps">' + steps + '</div></div></section>' +
+      '<section id="screenshots"><div class="container">' +
+        '<div class="section-kicker">' + esc(s.screenshots.kicker) + '</div>' +
+        '<h2 class="section-title">' + esc(s.screenshots.title) + '</h2>' +
+        '<p class="section-sub">' + esc(s.screenshots.sub) + '</p><div class="shots-grid">' + shots + '</div></div></section>' +
+      '<section class="cta" id="download"><div class="container">' +
+        '<h2>' + esc(s.cta.title) + '</h2><p>' + esc(s.cta.sub) + '</p>' +
+        '<div class="qr-row">' +
+          '<div class="qr-card"><div class="qr-box" id="qrApple"></div><div class="qr-label">' + esc(s.cta.scanApple) + '</div></div>' +
+          '<div class="qr-card"><div class="qr-box" id="qrPlay"></div><div class="qr-label">' + esc(s.cta.scanPlay) + '</div></div></div>' +
+        '<div class="store-row" style="justify-content:center">' +
+          storeBadge(APP_STORE, s.hero.downloadOn, s.hero.appStore, appleSvg) +
+          storeBadge(PLAY_STORE, s.hero.getItOn, s.hero.googlePlay, playSvg) + '</div>' +
+        '<p class="cta-note">' + esc(s.cta.note) + '</p></div></section></main>' + renderFooter(s);
   }
 
   function renderFooter(s) {
-    return (
-      '<footer class="footer"><div class="container footer-inner">' +
-        '<div>' +
-          '<a href="' + localePath(state.lang, 'privacy') + '" data-nav="privacy">' + esc(s.footer.privacy) + '</a>' +
-          '<a href="' + localePath(state.lang, 'terms') + '" data-nav="terms">' + esc(s.footer.terms) + '</a>' +
-          '<a href="mailto:' + EMAIL + '">' + esc(s.footer.support) + '</a>' +
-        '</div>' +
-        '<div class="copy">' + esc(s.footer.copy) + '</div>' +
-      '</div></footer>'
-    );
+    return '<footer class="footer"><div class="container footer-inner"><div>' +
+      '<a href="' + localePath(state.lang, 'privacy') + '" data-nav="privacy">' + esc(s.footer.privacy) + '</a>' +
+      '<a href="' + localePath(state.lang, 'terms') + '" data-nav="terms">' + esc(s.footer.terms) + '</a>' +
+      '<a href="mailto:' + EMAIL + '">' + esc(s.footer.support) + '</a></div>' +
+      '<div class="copy">' + esc(s.footer.copy) + '</div></div></footer>';
   }
 
   function renderLegal(s, kind) {
     var md = kind === 'privacy' ? s.legal.privacy : s.legal.terms;
     var html = (window.marked && marked.parse) ? marked.parse(md) : '<pre>' + esc(md) + '</pre>';
-    return (
-      renderNav(s) +
-      '<main class="legal-page"><div class="container"><div class="legal-card">' +
-        '<div class="legal-toolbar">' +
-          '<button type="button" class="back-btn" data-nav="home">← ' + esc(s.legal.back) + '</button>' +
-          '<button type="button" class="copy-btn" id="copySection">' + esc(s.legal.copyLink) + '</button>' +
-        '</div>' +
-        '<div class="legal-md">' + html + '</div>' +
-        '<div class="questions">' + esc(s.legal.questions) + ' <a href="mailto:' + EMAIL + '">' + EMAIL + '</a></div>' +
-      '</div></div></main>' +
-      renderFooter(s)
-    );
+    return renderNav(s) + '<main class="legal-page"><div class="container"><div class="legal-card">' +
+      '<div class="legal-toolbar">' +
+        '<button type="button" class="back-btn" data-nav="home">← ' + esc(s.legal.back) + '</button>' +
+        '<button type="button" class="copy-btn" id="copySection">' + esc(s.legal.copyLink) + '</button></div>' +
+      '<div class="legal-md">' + html + '</div>' +
+      '<div class="questions">' + esc(s.legal.questions) + ' <a href="mailto:' + EMAIL + '">' + EMAIL + '</a></div>' +
+      '</div></div></main>' + renderFooter(s);
   }
 
   function paintQr(el, text) {
     if (!el || !window.qrcode) return;
     try {
-      var qr = qrcode(0, 'M');
-      qr.addData(text);
-      qr.make();
+      var qr = qrcode(0, 'M'); qr.addData(text); qr.make();
       el.innerHTML = qr.createImgTag(4, 8);
       var img = el.querySelector('img');
       if (img) { img.alt = text; img.width = 140; img.height = 140; }
-    } catch (e) {
-      el.textContent = text;
-    }
+    } catch (e) { el.textContent = text; }
   }
 
   function bindUi() {
@@ -327,50 +273,41 @@
     });
     root.querySelectorAll('[data-scroll]').forEach(function (el) {
       el.addEventListener('click', function (ev) {
+        var id = el.getAttribute('data-scroll');
         if (state.view !== 'home') {
           ev.preventDefault();
           navigate(state.lang, 'home');
           setTimeout(function () {
-            var target = document.getElementById(el.getAttribute('data-scroll'));
+            var target = document.getElementById(id);
             if (target) target.scrollIntoView({ behavior: 'smooth' });
           }, 80);
           return;
         }
-        var target = document.getElementById(el.getAttribute('data-scroll'));
+        var target = document.getElementById(id);
         if (target) { ev.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
       });
     });
     var menuToggle = document.getElementById('menuToggle');
     var navLinks = document.getElementById('navLinks');
-    if (menuToggle && navLinks) {
-      menuToggle.addEventListener('click', function () { navLinks.classList.toggle('open'); });
-    }
+    if (menuToggle && navLinks) menuToggle.addEventListener('click', function () { navLinks.classList.toggle('open'); });
     var langBtn = document.getElementById('langBtn');
     var langMenu = document.getElementById('langMenu');
     if (langBtn && langMenu) {
-      langBtn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        langMenu.classList.toggle('open');
-      });
+      langBtn.addEventListener('click', function (e) { e.stopPropagation(); langMenu.classList.toggle('open'); });
       langMenu.querySelectorAll('[data-lang]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          navigate(btn.getAttribute('data-lang'), state.view);
-        });
+        btn.addEventListener('click', function () { navigate(btn.getAttribute('data-lang'), state.view); });
       });
       setTimeout(function () {
         document.addEventListener('click', function () { langMenu.classList.remove('open'); }, { once: true });
       }, 0);
     }
     var copyBtn = document.getElementById('copySection');
-    if (copyBtn) {
+    if (copyBtn && navigator.clipboard) {
       copyBtn.addEventListener('click', function () {
-        var url = location.href;
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(url).then(function () {
-            copyBtn.textContent = t().legal.copied;
-            setTimeout(function () { copyBtn.textContent = t().legal.copyLink; }, 1500);
-          });
-        }
+        navigator.clipboard.writeText(location.href).then(function () {
+          copyBtn.textContent = t().legal.copied;
+          setTimeout(function () { copyBtn.textContent = t().legal.copyLink; }, 1500);
+        });
       });
     }
     paintQr(document.getElementById('qrApple'), APP_STORE);
@@ -380,23 +317,17 @@
   function render() {
     var s = t();
     setDocumentMeta(s, state.lang);
-    var root = document.getElementById('root');
-    root.innerHTML = (state.view === 'privacy' || state.view === 'terms')
-      ? renderLegal(s, state.view)
-      : renderHome(s);
+    document.getElementById('root').innerHTML =
+      (state.view === 'privacy' || state.view === 'terms') ? renderLegal(s, state.view) : renderHome(s);
     bindUi();
   }
 
   function loadAndRender() {
     return loadLocale(state.lang).catch(function () {
-      if (state.lang !== DEFAULT) {
-        state.lang = DEFAULT;
-        return loadLocale(DEFAULT);
-      }
+      if (state.lang !== DEFAULT) { state.lang = DEFAULT; return loadLocale(DEFAULT); }
       throw new Error('en locale missing');
     }).then(function (strings) {
-      state.strings = strings;
-      render();
+      state.strings = strings; render();
     }).catch(function (err) {
       document.getElementById('root').innerHTML =
         '<p style="padding:40px;font-family:sans-serif">Failed to load locale: ' + esc(err.message) + '</p>';
@@ -408,9 +339,7 @@
     state.view = route.view;
     state.lang = resolveLang(route.lang);
     var desired = localePath(state.lang, state.view);
-    if (location.pathname !== desired) {
-      history.replaceState({ lang: state.lang, view: state.view }, '', desired);
-    }
+    if (location.pathname !== desired) history.replaceState({ lang: state.lang, view: state.view }, '', desired);
     try { localStorage.setItem(STORAGE_KEY, state.lang); } catch (e) {}
     loadAndRender();
   }
