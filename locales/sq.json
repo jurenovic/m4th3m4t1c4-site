@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "title": "M4th3m4t1c4 — Aventura matematike për heronjtë e rinj",
+    "description": "Matematikë e gamifikuar për moshën 6–12. Ndiq shtegun, zgjidh enigmata, fito yje dhe medalje — dhe zotëro mbledhjen, zbritjen, shumëzimin dhe pjesëtimin."
+  },
+  "nav": {
+    "features": "Veçoritë",
+    "how": "Si funksionon",
+    "screenshots": "Pamjet e ekranit",
+    "download": "Shkarko"
+  },
+  "hero": {
+    "eyebrow": "Matematikë e gamifikuar për moshën 6 – 12",
+    "titleBefore": "Matematikë që ndihet",
+    "titleAccent": "si lojë.",
+    "lead": "Ndiq një shteg të kthyer, zgjidh enigmata, fito yje dhe medalje — duke zotëruar mbledhjen, zbritjen, shumëzimin dhe pjesëtimin.",
+    "downloadOn": "Shkarko në",
+    "appStore": "App Store",
+    "getItOn": "Merre në",
+    "googlePlay": "Google Play",
+    "loved": "· E dashur nga fëmijët dhe prindërit",
+    "stats": [
+      {
+        "value": "20+",
+        "label": "Nivele shtegu"
+      },
+      {
+        "value": "4",
+        "label": "Operacione matematikore"
+      },
+      {
+        "value": "5★",
+        "label": "Vlerësimi App Store"
+      },
+      {
+        "value": "Falas",
+        "label": "Për të filluar"
+      }
+    ]
+  },
+  "features": {
+    "kicker": "Gjithçka që u duhet fëmijëve",
+    "title": "Ndërtuar për nxënësit e rinj",
+    "sub": "Çdo vendim dizajni u mor me fëmijët e shkollës fillore në mendje — nga madhësia e shkronjave te hapësira e butonave.",
+    "items": [
+      {
+        "emoji": "🗺️",
+        "title": "Shtegu i udhëtimit",
+        "desc": "Përparoni përmes 20+ niveleve të punuara me dorë në një hartë të kthyer. Çdo nivel shkyç të radhës dhe i motivon fëmijët të vazhdojnë."
+      },
+      {
+        "emoji": "➕",
+        "title": "Të 4 operacionet",
+        "desc": "Mbledhja, zbritja, shumëzimi dhe pjesëtimi — secili me temën e vet të aventurës dhe vështirësi në rritje."
+      },
+      {
+        "emoji": "⭐",
+        "title": "Yje dhe medalje",
+        "desc": "Fito deri në 3 yje për nivel dhe mblidh medalje arritjesh. Progresi i dukshëm i kthen fëmijët çdo ditë."
+      },
+      {
+        "emoji": "🔥",
+        "title": "Seritë ditore",
+        "desc": "Ndërto një zakon stërvitjeje me seritë që shpërblejnë qëndrueshmërinë. 5 minuta çdo ditë mundin 35 minuta një herë në javë."
+      },
+      {
+        "emoji": "🌙",
+        "title": "Modaliteti i errët",
+        "desc": "Temë e errët AMOLED e dizajnuar plotësisht, e butë për sytë gjatë stërvitjes së mbrëmjes. Duket fantastike në çdo kohë të ditës."
+      },
+      {
+        "emoji": "✨",
+        "title": "Feedback i menjëhershëm",
+        "desc": "Çdo përgjigje merr feedback të menjëhershëm vizual dhe zanor. Të sakta festojnë; të gabuara shpjegojnë butësisht — pa turp, vetëm mësim."
+      }
+    ]
+  },
+  "how": {
+    "kicker": "Si funksionon",
+    "title": "Tre hapa nga shkarkimi te heroi i matematikës.",
+    "sub": "",
+    "steps": [
+      {
+        "n": "01",
+        "icon": "🎯",
+        "title": "Zgjidh një operacion",
+        "desc": "Zgjidh mes Arenës së mbledhjes, Safarit të zbritjes, Malit të shumëzimit ose Garës së pjesëtimit."
+      },
+      {
+        "n": "02",
+        "icon": "🧮",
+        "title": "Zgjidh pyetjet",
+        "desc": "Prek tastierën e madhe numerike për të futur përgjigjen. Çdo përgjigje e saktë mbush matësin e yjeve."
+      },
+      {
+        "n": "03",
+        "icon": "🏆",
+        "title": "Ngjitu në nivel dhe mblidh",
+        "desc": "Fito deri në 3 yje për nivel, shkyç medalje dhe shiko se si rritet shtegu yt."
+      }
+    ]
+  },
+  "screenshots": {
+    "kicker": "Shikoje në veprim",
+    "title": "E pastër, me ngjyra dhe e dizajnuar që fëmijët të qëndrojnë të fokusuar te mësimi.",
+    "sub": "",
+    "caps": [
+      "Zgjidh operacionin",
+      "Ndiq shtegun tënd",
+      "Zgjidh dhe fito yje",
+      "Festo çdo fitore"
+    ]
+  },
+  "cta": {
+    "title": "Fillo aventurën tënde matematikore",
+    "sub": "Falas për t'u shkarkuar. 2 nivelet e para nga ne. Përmirësoje kurdo për qasje të pakufizuar në të gjitha nivelet.",
+    "scanApple": "Skano për App Store",
+    "scanPlay": "Skano për Google Play",
+    "note": "Drejto kamerën e telefonit te kodi QR për shkarkim të menjëhershëm. Nuk kërkohet llogari."
+  },
+  "footer": {
+    "privacy": "Politika e privatësisë",
+    "terms": "Kushtet e përdorimit",
+    "support": "Mbështetje",
+    "copy": "© 2026 M4th3m4t1c4. Mosha 6 – 12."
+  },
+  "legal": {
+    "back": "Kthehu",
+    "copyLink": "Kopjo lidhjen e këtij seksioni",
+    "copied": "✓ u kopjua",
+    "questions": "Pyetje?"
+  }
+}

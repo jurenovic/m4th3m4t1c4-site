@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "title": "M4th3m4t1c4 — Genç kahramanlar için matematik maceraları",
+    "description": "6–12 yaş için oyunlaştırılmış matematik. Yolu takip et, bulmacaları çöz, yıldızlar ve rozetler kazan — toplama, çıkarma, çarpma ve bölmeyi öğrenirken."
+  },
+  "nav": {
+    "features": "Özellikler",
+    "how": "Nasıl çalışır",
+    "screenshots": "Ekran görüntüleri",
+    "download": "İndir"
+  },
+  "hero": {
+    "eyebrow": "6 – 12 yaş için oyunlaştırılmış matematik",
+    "titleBefore": "Oyun gibi hissettiren",
+    "titleAccent": "matematik.",
+    "lead": "Kıvrımlı bir yolu takip et, bulmacaları çöz, yıldızlar ve rozetler kazan — toplama, çıkarma, çarpma ve bölmeyi öğrenirken.",
+    "downloadOn": "İndir:",
+    "appStore": "App Store",
+    "getItOn": "Şuradan al:",
+    "googlePlay": "Google Play",
+    "loved": "· Çocuklar ve ebeveynler tarafından seviliyor",
+    "stats": [
+      {
+        "value": "20+",
+        "label": "Yol seviyesi"
+      },
+      {
+        "value": "4",
+        "label": "Matematik işlemi"
+      },
+      {
+        "value": "5★",
+        "label": "App Store puanı"
+      },
+      {
+        "value": "Ücretsiz",
+        "label": "Başlamak için"
+      }
+    ]
+  },
+  "features": {
+    "kicker": "Çocukların ihtiyacı olan her şey",
+    "title": "Genç öğrenciler için tasarlandı",
+    "sub": "Her tasarım kararı ilkokul çocukları düşünülerek alındı — yazı tipinden düğme aralığına kadar.",
+    "items": [
+      {
+        "emoji": "🗺️",
+        "title": "Yolculuk yolu",
+        "desc": "Kıvrımlı bir haritada 20’den fazla özenle hazırlanmış seviyeyi geç. Her seviye bir sonrakini açar ve çocukları ilerlemeye teşvik eder."
+      },
+      {
+        "emoji": "➕",
+        "title": "4 işlemin tümü",
+        "desc": "Toplama, çıkarma, çarpma ve bölme — her biri kendi macera teması ve artan zorlukla."
+      },
+      {
+        "emoji": "⭐",
+        "title": "Yıldızlar ve rozetler",
+        "desc": "Seviye başına en fazla 3 yıldız kazan ve başarı rozetleri topla. Görünür ilerleme çocukları her gün geri getirir."
+      },
+      {
+        "emoji": "🔥",
+        "title": "Günlük seriler",
+        "desc": "Tutarlılığı ödüllendiren serilerle alıştırma alışkanlığı edin. Günde 5 dakika, haftada bir kez 35 dakikayı yener."
+      },
+      {
+        "emoji": "🌙",
+        "title": "Karanlık mod",
+        "desc": "Akşam alıştırmalarında gözleri yormayan, tamamen tasarlanmış AMOLED karanlık tema. Günün her saatinde harika görünür."
+      },
+      {
+        "emoji": "✨",
+        "title": "Anında geri bildirim",
+        "desc": "Her cevap anında görsel ve sesli geri bildirim alır. Doğrular kutlar; yanlışlar nazikçe açıklar — utanç yok, sadece öğrenme."
+      }
+    ]
+  },
+  "how": {
+    "kicker": "Nasıl çalışır",
+    "title": "İndirmeden matematik kahramanına üç adım.",
+    "sub": "",
+    "steps": [
+      {
+        "n": "01",
+        "icon": "🎯",
+        "title": "Bir işlem seç",
+        "desc": "Toplama Arenası, Çıkarma Safarisi, Çarpma Dağı veya Bölme Koşusu arasından seç."
+      },
+      {
+        "n": "02",
+        "icon": "🧮",
+        "title": "Soruları çöz",
+        "desc": "Cevabı girmek için büyük sayı tuş takımına dokun. Her doğru cevap yıldız ölçerini doldurur."
+      },
+      {
+        "n": "03",
+        "icon": "🏆",
+        "title": "Seviye atla ve topla",
+        "desc": "Seviye başına en fazla 3 yıldız kazan, rozetlerin kilidini aç ve yolunun büyüdüğünü izle."
+      }
+    ]
+  },
+  "screenshots": {
+    "kicker": "Eylemde gör",
+    "title": "Temiz, renkli ve çocukların öğrenmeye odaklanmasını sağlayacak şekilde tasarlandı.",
+    "sub": "",
+    "caps": [
+      "İşlemini seç",
+      "Yolunu takip et",
+      "Çöz ve yıldız kazan",
+      "Her galibiyeti kutla"
+    ]
+  },
+  "cta": {
+    "title": "Matematik macerana başla",
+    "sub": "İndirmesi ücretsiz. İlk 2 seviye bizden. Tüm seviyelere sınırsız erişim için istediğin zaman yükselt.",
+    "scanApple": "App Store için tara",
+    "scanPlay": "Google Play için tara",
+    "note": "Anında indirmek için telefon kameranı QR koduna tut. Hesap gerekmez."
+  },
+  "footer": {
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Koşulları",
+    "support": "Destek",
+    "copy": "© 2026 M4th3m4t1c4. Yaş 6 – 12."
+  },
+  "legal": {
+    "back": "Geri",
+    "copyLink": "Bu bölüme bağlantıyı kopyala",
+    "copied": "✓ kopyalandı",
+    "questions": "Sorular?"
+  }
+}
