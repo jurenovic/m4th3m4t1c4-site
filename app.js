@@ -92,17 +92,22 @@
 
   function localePath(lang, view) {
     var basePath = new URL(SITE_BASE).pathname.replace(/\/?$/, '/');
-    var p = basePath + lang + '/';
-    if (view === 'privacy') p += 'privacy';
-    else if (view === 'terms') p += 'terms';
-    return p;
+    // Legal pages are static (HTTP 200) so Play / crawlers don't hit the SPA 404→index.html fallback.
+    if (view === 'privacy') return basePath + 'privacy/';
+    if (view === 'terms') return basePath + 'terms/';
+    return basePath + lang + '/';
   }
 
   function navigate(lang, view) {
-    history.pushState({ lang: lang, view: view }, '', localePath(lang, view || 'home'));
-    state.lang = lang;
-    state.view = view || 'home';
+    view = view || 'home';
     try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+    if (view === 'privacy' || view === 'terms') {
+      location.assign(localePath(lang, view));
+      return;
+    }
+    history.pushState({ lang: lang, view: view }, '', localePath(lang, view));
+    state.lang = lang;
+    state.view = view;
     loadAndRender();
   }
 
@@ -348,9 +353,17 @@
     var route = parseRoute();
     state.view = route.view;
     state.lang = resolveLang(route.lang);
+    try { localStorage.setItem(STORAGE_KEY, state.lang); } catch (e) {}
+    // Privacy/Terms live as real directories (privacy/, terms/) for store crawlers.
+    if (state.view === 'privacy' || state.view === 'terms') {
+      var legalUrl = localePath(state.lang, state.view);
+      if (location.pathname.replace(/\/?$/, '/') !== legalUrl.replace(/\/?$/, '/')) {
+        location.replace(legalUrl);
+        return;
+      }
+    }
     var desired = localePath(state.lang, state.view);
     if (location.pathname !== desired) history.replaceState({ lang: state.lang, view: state.view }, '', desired);
-    try { localStorage.setItem(STORAGE_KEY, state.lang); } catch (e) {}
     loadAndRender();
   }
 
